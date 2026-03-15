@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Split banner</title>
-    <link rel="stylesheet" href="/Components/style.css" />
+    <title>LY-split-banner</title>
+    <link rel="stylesheet" href="/style.css" />
     <base href="http://cdn-netshop.lyrecocontract.no/" />
   </head>
   <body>
@@ -29,34 +29,34 @@
         }
       </style>
 
-      <!-- #region SPLIT BANNER -->
-      <section class="ly-split-promo">
+      <!-- LY-split-banner -->
+      <section class="ly-split-banner">
         <style>
-          .ly-split-promo {
+          .ly-split-banner {
             max-width: 1440px;
             width: 100%;
             margin: 0 auto;
-            font-family: "Jost", sans-serif;
           }
 
-          .ly-split-promo__link {
+          .ly-split-banner__link {
             display: block;
             width: 100%;
             text-decoration: none !important;
             color: inherit;
             overflow: hidden;
-            background: var(--no-neutral-0);
-            border: 1px solid var(--no-neutral-300);
+            background: var(--no-neutral-0, #ffffff);
+            border: 1px solid var(--no-neutral-300, #e1e3ea);
+            border-radius: 10px;
           }
 
-          .ly-split-promo__grid {
+          .ly-split-banner__grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             min-height: 280px;
           }
 
-          .ly-split-promo__content {
-            background: var(--no-supporting-cerulean-300);
+          .ly-split-banner__content {
+            background: var(--no-supporting-cerulean-300, #bfe8ff);
             padding: 56px 48px 56px 68px;
             display: flex;
             flex-direction: column;
@@ -64,30 +64,23 @@
             gap: 14px;
           }
 
-          .ly-split-promo__eyebrow {
+          .ly-split-banner__title {
             margin: 0;
-            font-size: var(--fo-20);
-            font-weight: 600;
-            color: var(--no-primary-700);
-          }
-
-          .ly-split-promo__title {
-            margin: 0;
-            font-size: var(--fo-20);
+            font-size: 20px;
             line-height: 1.2;
             font-weight: 700;
-            color: var(--no-primary-500);
+            color: var(--no-primary-500, #2d2e87);
           }
 
-          .ly-split-promo__text {
+          .ly-split-banner__text {
             margin: 0;
             max-width: 46ch;
-            font-size: var(--fo-18);
+            font-size: 18px;
             line-height: 1.5;
-            color: var(--no-primary-500);
+            color: var(--no-primary-500, #2d2e87);
           }
 
-          .ly-split-promo__cta {
+          .ly-split-banner__cta {
             margin-top: 10px;
             display: inline-flex;
             align-items: center;
@@ -95,90 +88,74 @@
             height: 46px;
             padding: 0 22px;
             border-radius: 999px;
-            background: var(--no-primary-500);
-            color: var(--no-neutral-0);
-            border: 1px solid var(--no-primary-500);
-            font-size: var(--fo-16);
+            background: var(--no-primary-500, #2d2e87);
+            color: var(--no-neutral-0, #ffffff);
+            border: 1px solid var(--no-primary-500, #2d2e87);
+            font-size: 16px;
             font-weight: 600;
             width: max-content;
-            text-underline-offset: 3px;
-            cursor: pointer;
+            transition: 0.25s ease;
           }
 
-          .ly-split-promo__media {
+          .ly-split-banner__link:hover .ly-split-banner__cta {
+            background: var(--no-neutral-0, #ffffff);
+            color: var(--no-primary-500, #2d2e87);
+          }
+
+          .ly-split-banner__media {
             position: relative;
-            background: var(--no-neutral-200);
+            background: var(--no-neutral-200, #f0f2f4);
             min-height: 240px;
           }
 
-          .ly-split-promo__img {
+          .ly-split-banner__img {
             width: 100%;
             height: 100%;
             display: block;
             object-fit: cover;
           }
 
-          .ly-split-promo__link:hover .ly-split-promo__cta,
-          .ly-split-promo__link:focus .ly-split-promo__cta,
-          .ly-split-promo__link:focus-visible .ly-split-promo__cta {
-            background: var(--no-neutral-0);
-            color: var(--no-primary-500);
-            transition: 0.25s ease;
-          }
-
-          .ly-split-promo__link:focus-visible {
-            outline: 3px solid var(--no-primary-300);
-            outline-offset: 3px;
-          }
-
           @media (max-width: 768px) {
-            .ly-split-promo__grid {
+            .ly-split-banner__grid {
               grid-template-columns: 1fr;
             }
 
-            .ly-split-promo__content {
+            .ly-split-banner__content {
               padding: 22px 18px 18px 18px;
             }
 
-            .ly-split-promo__media {
+            .ly-split-banner__media {
               min-height: 220px;
             }
           }
         </style>
 
         <a
-          class="ly-split-promo__link radius-medium"
+          class="ly-split-banner__link"
+          href="#"
           style="text-decoration: none !important"
-          href="/c/tork-og-renhold/vask-og-rengjoringsvogner-244106939"
-          aria-label="Rengjøringsvogn - se produktene"
+          aria-label="Split banner"
         >
-          <div class="ly-split-promo__grid">
-            <div class="ly-split-promo__content">
-              <h3 class="ly-split-promo__title">Rengjøringsvogn</h3>
-
-              <p class="ly-split-promo__text">
-                Oppdag vårt store utvalg av rengjøringsvogner tilpasset både
-                store og små bedrifter! Enten du driver med profesjonell
-                rengjøring i kontorbygg, hoteller, skoler eller
-                helseinstitusjoner, har vi vognene som gjør arbeidet enklere,
-                raskere og mer effektivt.
+          <div class="ly-split-banner__grid">
+            <div class="ly-split-banner__content">
+              <h3 class="ly-split-banner__title">Tittel her</h3>
+              <p class="ly-split-banner__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Beskrivende tekst som forklarer innholdet i banneret.
               </p>
-
-              <span class="ly-split-promo__cta">Se produktene her</span>
+              <span class="ly-split-banner__cta">Se produktene her</span>
             </div>
-
-            <div class="ly-split-promo__media" aria-hidden="true">
+            <div class="ly-split-banner__media" aria-hidden="true">
               <img
-                class="ly-split-promo__img"
-                src="/static/objectstore/NO_LYRECO_RENHOLD__rengjoringsvogn__split-banner.webp"
-                alt="Vaskepersonal som tar noe ut av en rengjøringsvogn"
+                class="ly-split-banner__img"
+                src="https://placehold.co/700x400"
+                alt="Beskrivende bildetekst"
                 loading="lazy"
               />
             </div>
           </div>
         </a>
       </section>
-      <!-- endregion -->
     </section>
   </body>
 </html>

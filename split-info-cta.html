@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Split Info CTA</title>
-    <link rel="stylesheet" href="/Components/style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <base href="http://cdn-netshop.lyrecocontract.no/" />
   </head>
   <body>
@@ -29,21 +29,20 @@
         }
       </style>
 
-      <!-- #region SPLIT INFO CTA -->
+      <!-- LY-split-info -->
       <section class="ly-split-info">
         <style>
           .ly-split-info {
             max-width: 1440px;
             width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            font-family: "Jost", sans-serif;
+            margin: 0 auto;
           }
 
           .ly-split-info__wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             overflow: hidden;
+            border-radius: 10px;
           }
 
           .ly-split-info__col {
@@ -64,18 +63,22 @@
 
           .ly-split-info__title {
             margin: 0 0 12px 0;
-            font-size: var(--fo-18);
+            font-size: 18px;
             font-weight: 800;
             line-height: 1.3;
-            color: var(--no-neutral-900);
+            color: var(--no-neutral-800, #2b303b);
           }
 
           .ly-split-info__text {
             margin: 0;
-            font-size: var(--fo-14);
+            font-size: 14px;
             line-height: 1.7;
-            color: var(--no-neutral-900);
+            color: var(--no-neutral-800, #2b303b);
             max-width: 70ch;
+          }
+
+          .ly-split-info__text + .ly-split-info__text {
+            margin-top: 12px;
           }
 
           .ly-split-info__cta {
@@ -93,56 +96,39 @@
           }
         </style>
 
-        <div class="ly-split-info__wrapper radius-medium">
+        <div class="ly-split-info__wrapper">
+          <!-- LEFT COLUMN -->
           <div class="ly-split-info__col ly-split-info__col--light">
-            <h2 class="ly-split-info__title">
-              Er du den eneste i Lyreco som «kan» facility?
-            </h2>
-
+            <h2 class="ly-split-info__title">Overskrift for venstre kolonne</h2>
             <p class="ly-split-info__text">
-              Heldigvis ikke! Vi har faktisk en stor salgsstyrke som er formelt
-              kvalifisert til å utføre renhold i morgen om det skulle trengs.
-              Denne kompetansen har de fått for å kunne bidra i rådgivningen og
-              tilføre verdi hos kundene. Vi har også stor fagkompetanse i flere
-              deler av organisasjonen.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Første
+              avsnitt med informasjon.
             </p>
-
-            <p class="ly-split-info__text" style="margin-top: 12px">
-              Gjennom Lyreco Academy får våre folk en grundig opplæring innen
-              facility. Det er en trygghet for kundene, og en trygghet for oss.
+            <p class="ly-split-info__text">
+              Andre avsnitt med mer utfyllende informasjon om temaet.
             </p>
           </div>
 
+          <!-- RIGHT COLUMN -->
           <div class="ly-split-info__col ly-split-info__col--dark">
             <div>
-              <h2 class="ly-split-info__title">
-                Nå som kunstig intelligens er overalt må vi spørre til slutt;
-                vil roboter erstatte renholderen?
-              </h2>
-
+              <h2 class="ly-split-info__title">Overskrift for høyre kolonne</h2>
               <p class="ly-split-info__text">
-                Slik jeg ser det blir ikke renholderen overflødig, men rollen
-                vil utvikle seg. Det kommer stadig nye systemer som utnytter
-                teknologien for å oppnå riktigere renhold med lavere
-                miljøbelastning.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Første
+                avsnitt med informasjon.
               </p>
-
-              <p class="ly-split-info__text" style="margin-top: 12px">
-                Her må renholderen som fagperson inn for å styre teknologien på
-                en god måte. Det ligger mange muligheter her. Så nei —
-                renholderen blir ikke borte. Heldigvis!
+              <p class="ly-split-info__text">
+                Andre avsnitt med mer utfyllende informasjon.
               </p>
             </div>
-
             <div class="ly-split-info__cta">
               <a href="#" class="no-pill-btn no-pill-btn-neutral-dark">
-                Vil du optimalisere din facility-drift?
+                Knappetekst her
               </a>
             </div>
           </div>
         </div>
       </section>
-      <!-- endregion -->
     </section>
   </body>
 </html>

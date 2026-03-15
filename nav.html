@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navigation</title>
-    <link rel="stylesheet" href="/Components/style.css" />
+    <title>LY-nav-top</title>
+    <link rel="stylesheet" href="/style.css" />
     <base href="http://cdn-netshop.lyrecocontract.no/" />
   </head>
   <body>
@@ -29,14 +29,14 @@
         }
       </style>
 
-      <!-- #region TOP PAGE NAV  -->
-      <nav class="ly-top-page-nav-wrap ly-top-page-nav-wrap--fade">
+      <!-- LY-nav-top -->
+      <nav class="ly-nav-top">
         <style>
-          .ly-top-page-nav-wrap {
+          .ly-nav-top {
             width: 100%;
+            max-width: 1440px;
             background-color: var(--no-neutral-0, #fff);
-            border-bottom: 1px solid var(--no-primary-300, #c7d6ff);
-            margin-bottom: 24px;
+            border-bottom: 1px solid var(--no-primary-300, #b3b3e5);
             position: relative;
             overflow-x: auto;
             overflow-y: hidden;
@@ -44,13 +44,14 @@
             scrollbar-width: none;
             scroll-behavior: smooth;
             font-size: 1.2rem;
+            text-align: center;
           }
 
-          .ly-top-page-nav-wrap::-webkit-scrollbar {
+          .ly-nav-top::-webkit-scrollbar {
             display: none;
           }
 
-          .ly-top-page-nav {
+          .ly-nav-top__list {
             display: inline-flex;
             list-style: none;
             padding: 0;
@@ -59,152 +60,47 @@
             white-space: nowrap;
           }
 
-          .ly-top-page-nav > li {
+          .ly-nav-top__list > li {
             flex: 0 0 auto;
-            font-size: 1.2rem;
           }
 
-          .ly-top-page-nav a {
+          .ly-nav-top__list a {
             display: block;
             padding: 0.5rem 1rem;
             position: relative;
-            text-decoration: none;
-            color: var(--no-primary-500, #2b5cff);
+            text-decoration: none !important;
+            color: var(--no-primary-500, #2d2e87);
             cursor: pointer;
             white-space: nowrap;
           }
 
-          .ly-top-page-nav a::after {
+          .ly-nav-top__list a::after {
             content: "";
             position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
             height: 2px;
-            background: var(--no-primary-500, #2b5cff);
+            background: var(--no-primary-500, #2d2e87);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
           }
 
-          .ly-top-page-nav a:hover::after,
-          .ly-top-page-nav-active a::after {
+          .ly-nav-top__list a:hover::after,
+          .ly-nav-top__active a::after {
             transform: scaleX(1);
-          }
-
-          @media (min-width: 769px) {
-            .ly-top-page-nav-wrap.is-centered {
-              text-align: center;
-            }
-
-            .ly-top-page-nav-wrap.is-centered .ly-top-page-nav {
-              margin-left: auto;
-              margin-right: auto;
-              display: inline-flex;
-            }
-          }
-
-          .ly-top-page-nav-wrap--fade::before,
-          .ly-top-page-nav-wrap--fade::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 56px;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-          }
-
-          .ly-top-page-nav-wrap--fade::before {
-            left: 0;
-            background: linear-gradient(
-              to right,
-              var(--no-neutral-0, #fff),
-              rgba(255, 255, 255, 0)
-            );
-          }
-
-          .ly-top-page-nav-wrap--fade::after {
-            right: 0;
-            background: linear-gradient(
-              to left,
-              var(--no-neutral-0, #fff),
-              rgba(255, 255, 255, 0)
-            );
-          }
-
-          .ly-top-page-nav-wrap--fade.is-left-fade::before {
-            opacity: 1;
-          }
-          .ly-top-page-nav-wrap--fade.is-right-fade::after {
-            opacity: 1;
           }
         </style>
 
-        <ul class="ly-top-page-nav">
-          <li>
-            <a href="/a/inspirasjon" style="text-decoration: none !important"
-              >Inspirasjon</a
-            >
-          </li>
-          <li>
-            <a href="/a/tjenester" style="text-decoration: none !important"
-              >Tjenester</a
-            >
-          </li>
-          <li>
-            <a
-              href="/a/leverandornyheter"
-              style="text-decoration: none !important"
-              >Leverandørnyheter</a
-            >
-          </li>
-          <li class="ly-top-page-nav-active">
-            <a href="/a/til-bedrifter" style="text-decoration: none !important"
-              >Til bedrifter</a
-            >
-          </li>
-          <li>
-            <a href="/a/kampanjer" style="text-decoration: none !important"
-              >Kampanjer</a
-            >
-          </li>
+        <ul class="ly-nav-top__list">
+          <li><a href="#">Lenke 1</a></li>
+          <li><a href="#">Lenke 2</a></li>
+          <li><a href="#">Lenke 3</a></li>
+          <li class="ly-nav-top__active"><a href="#">Aktiv lenke</a></li>
+          <li><a href="#">Lenke 5</a></li>
         </ul>
-
-        <script>
-          (function () {
-            document
-              .querySelectorAll(".ly-top-page-nav-wrap--fade")
-              .forEach(function (wrap) {
-                function update() {
-                  var maxScroll = wrap.scrollWidth - wrap.clientWidth;
-                  var left = wrap.scrollLeft;
-
-                  wrap.classList.toggle("is-centered", maxScroll <= 1);
-
-                  wrap.classList.toggle(
-                    "is-left-fade",
-                    maxScroll > 1 && left > 2,
-                  );
-                  wrap.classList.toggle(
-                    "is-right-fade",
-                    maxScroll > 1 && left < maxScroll - 2,
-                  );
-                }
-
-                wrap.addEventListener("scroll", function () {
-                  window.requestAnimationFrame(update);
-                });
-
-                window.addEventListener("resize", update);
-                update();
-              });
-          })();
-        </script>
       </nav>
-      <!-- #endregion -->
     </section>
   </body>
 </html>

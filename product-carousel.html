@@ -4,33 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product carousel</title>
-    <link rel="stylesheet" href="/Components/style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <base href="http://cdn-netshop.lyrecocontract.no/" />
   </head>
   <body>
-    <!-- #region PRODUCT CAROUSEL -->
-    <section
-      class="hb-simple-product-carousel hb-simple-product-carousel--fade">
+    <!-- LY-carousel-product -->
+    <section class="ly-carousel-product">
       <style>
-        .hb-simple-product-carousel {
+        .ly-carousel-product {
           position: relative;
           max-width: 1440px;
           width: 100%;
           margin: 0 auto;
-          font-family: "Jost", sans-serif;
         }
 
-        .hb-simple-product-carousel a {
-          text-decoration: none !important;
-          color: inherit;
-        }
-
-        .hb-simple-product-carousel__viewport {
-          position: relative;
-          width: 100%;
-        }
-
-        .hb-simple-product-carousel__track {
+        .ly-carousel-product__track {
           display: flex;
           gap: 16px;
           overflow-x: auto;
@@ -43,85 +31,45 @@
           align-items: stretch;
         }
 
-        .hb-simple-product-carousel__track::-webkit-scrollbar {
+        .ly-carousel-product__track::-webkit-scrollbar {
           display: none;
         }
 
-        .hb-simple-product-carousel--fade
-          .hb-simple-product-carousel__viewport::before,
-        .hb-simple-product-carousel--fade
-          .hb-simple-product-carousel__viewport::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 64px;
-          pointer-events: none;
-          z-index: 3;
-          opacity: 0;
-          transition: opacity 0.2s ease;
-        }
-
-        .hb-simple-product-carousel--fade
-          .hb-simple-product-carousel__viewport::before {
-          left: 0;
-          background: linear-gradient(
-            to right,
-            var(--no-neutral-0, #fff),
-            rgba(255, 255, 255, 0)
-          );
-        }
-
-        .hb-simple-product-carousel--fade
-          .hb-simple-product-carousel__viewport::after {
-          right: 0;
-          background: linear-gradient(
-            to left,
-            var(--no-neutral-0, #fff),
-            rgba(255, 255, 255, 0)
-          );
-        }
-
-        .hb-simple-product-carousel--fade.is-left-fade
-          .hb-simple-product-carousel__viewport::before {
-          opacity: 1;
-        }
-        .hb-simple-product-carousel--fade.is-right-fade
-          .hb-simple-product-carousel__viewport::after {
-          opacity: 1;
-        }
-
-        .hb-simple-product-card {
+        .ly-carousel-product__card {
           width: 270px;
           min-height: 320px;
           background-color: var(--no-neutral-0, #fff);
-          border: 1px solid #b3b3e5;
+          border: 1px solid var(--no-primary-300, #b3b3e5);
           display: flex;
           flex-direction: column;
           padding: 14px;
           gap: 10px;
           flex-shrink: 0;
           scroll-snap-align: start;
+          text-decoration: none !important;
+          color: inherit;
+          border-radius: 10px;
           transition:
             background-color 0.2s ease,
             border-color 0.2s ease;
         }
 
-        .hb-simple-product-card:hover {
-          background-color: var(--no-supporting-cerulean-300, #e6f2ff);
-          border-color: var(--no-primary-300, #a9c7ff);
+        .ly-carousel-product__card:hover {
+          background-color: var(--no-supporting-cerulean-300, #bfe8ff);
+          border-color: var(--no-primary-300, #b3b3e5);
         }
 
-        .hb-simple-product-card__image {
+        .ly-carousel-product__image {
           height: 170px;
-          background: var(--no-neutral-100, #f5f5f5);
+          background: var(--no-neutral-100, #f6f7f9);
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          border-radius: 10px;
         }
 
-        .hb-simple-product-card__image img {
+        .ly-carousel-product__image img {
           max-height: 100%;
           max-width: 100%;
           object-fit: contain;
@@ -129,7 +77,7 @@
           display: block;
         }
 
-        .hb-simple-product-card__title {
+        .ly-carousel-product__title {
           margin: 4px 0 0 0;
           font-size: 16px;
           line-height: 1.25;
@@ -142,18 +90,18 @@
           -webkit-box-orient: vertical;
         }
 
-        .hb-simple-product-card__sku {
+        .ly-carousel-product__sku {
           font-size: 13px;
-          color: var(--no-neutral-650, #666);
+          color: var(--no-neutral-650, #51616f);
           margin-top: 2px;
         }
 
-        .hb-simple-product-card__cta {
+        .ly-carousel-product__cta {
           margin-top: auto;
           height: 40px;
           border-radius: 999px;
-          border: 1px solid var(--no-success-600, #7fbf00);
-          background-color: var(--no-success-600, #7fbf00);
+          border: 1px solid #7fbf00;
+          background-color: #7fbf00;
           color: var(--no-neutral-0, #fff);
           display: flex;
           align-items: center;
@@ -165,19 +113,19 @@
             border-color 0.2s ease;
         }
 
-        .hb-simple-product-card:hover .hb-simple-product-card__cta {
+        .ly-carousel-product__card:hover .ly-carousel-product__cta {
           background-color: var(--no-neutral-0, #fff);
-          color: var(--no-success-700, #5f9800);
-          border-color: var(--no-success-700, #5f9800);
+          color: var(--no-semantic-success-700, #2a401d);
+          border-color: var(--no-semantic-success-700, #2a401d);
         }
 
         @media (min-width: 1440px) {
-          .hb-simple-product-carousel__track {
+          .ly-carousel-product__track {
             overflow-x: hidden;
             scroll-snap-type: none;
           }
 
-          .hb-simple-product-card {
+          .ly-carousel-product__card {
             width: auto;
             flex: 1 1 0;
             min-width: 0;
@@ -185,83 +133,78 @@
         }
       </style>
 
-      <div class="hb-simple-product-carousel__viewport">
-        <div class="hb-simple-product-carousel__track">
-          <a href="#" class="hb-simple-product-card radius-medium">
-            <div class="hb-simple-product-card__image radius-medium">
-              <img
-                src="https://cdn-netshop.lyreco.no/static/1541668401000000/images/EasyOrderHighResolution/47/48/asset.4944748.jpg"
-                alt="Produktnavn"
-                loading="lazy" />
-            </div>
-            <h3 class="hb-simple-product-card__title">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <div class="hb-simple-product-card__sku">Varenr: 000000</div>
-            <div class="hb-simple-product-card__cta">Se produkt</div>
-          </a>
+      <div class="ly-carousel-product__track">
+        <!-- PRODUCT 1 -->
+        <a href="#" class="ly-carousel-product__card">
+          <div class="ly-carousel-product__image">
+            <img
+              src="https://placehold.co/200x170"
+              alt="Produktnavn"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="ly-carousel-product__title">Produktnavn her</h3>
+          <div class="ly-carousel-product__sku">Varenr: 000000</div>
+          <div class="ly-carousel-product__cta">Se produkt</div>
+        </a>
 
-          <a href="#" class="hb-simple-product-card radius-medium">
-            <div class="hb-simple-product-card__image radius-medium">
-              <img
-                src="https://cdn-netshop.lyreco.no/static/1541668401000000/images/EasyOrderHighResolution/47/48/asset.4944748.jpg"
-                alt="Produktnavn"
-                loading="lazy" />
-            </div>
-            <h3 class="hb-simple-product-card__title">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <div class="hb-simple-product-card__sku">Varenr: 000000</div>
-            <div class="hb-simple-product-card__cta">Se produkt</div>
-          </a>
+        <!-- PRODUCT 2 -->
+        <a href="#" class="ly-carousel-product__card">
+          <div class="ly-carousel-product__image">
+            <img
+              src="https://placehold.co/200x170"
+              alt="Produktnavn"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="ly-carousel-product__title">Produktnavn her</h3>
+          <div class="ly-carousel-product__sku">Varenr: 000000</div>
+          <div class="ly-carousel-product__cta">Se produkt</div>
+        </a>
 
-          <a href="#" class="hb-simple-product-card radius-medium">
-            <div class="hb-simple-product-card__image radius-medium">
-              <img
-                src="https://cdn-netshop.lyreco.no/static/1541668401000000/images/EasyOrderHighResolution/47/48/asset.4944748.jpg"
-                alt="Produktnavn"
-                loading="lazy" />
-            </div>
-            <h3 class="hb-simple-product-card__title">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <div class="hb-simple-product-card__sku">Varenr: 000000</div>
-            <div class="hb-simple-product-card__cta">Se produkt</div>
-          </a>
+        <!-- PRODUCT 3 -->
+        <a href="#" class="ly-carousel-product__card">
+          <div class="ly-carousel-product__image">
+            <img
+              src="https://placehold.co/200x170"
+              alt="Produktnavn"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="ly-carousel-product__title">Produktnavn her</h3>
+          <div class="ly-carousel-product__sku">Varenr: 000000</div>
+          <div class="ly-carousel-product__cta">Se produkt</div>
+        </a>
 
-          <a href="#" class="hb-simple-product-card radius-medium">
-            <div class="hb-simple-product-card__image radius-medium">
-              <img
-                src="https://cdn-netshop.lyreco.no/static/1541668401000000/images/EasyOrderHighResolution/47/48/asset.4944748.jpg"
-                alt="Produktnavn"
-                loading="lazy" />
-            </div>
-            <h3 class="hb-simple-product-card__title">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <div class="hb-simple-product-card__sku">Varenr: 000000</div>
-            <div class="hb-simple-product-card__cta">Se produkt</div>
-          </a>
+        <!-- PRODUCT 4 -->
+        <a href="#" class="ly-carousel-product__card">
+          <div class="ly-carousel-product__image">
+            <img
+              src="https://placehold.co/200x170"
+              alt="Produktnavn"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="ly-carousel-product__title">Produktnavn her</h3>
+          <div class="ly-carousel-product__sku">Varenr: 000000</div>
+          <div class="ly-carousel-product__cta">Se produkt</div>
+        </a>
 
-          <a href="#" class="hb-simple-product-card radius-medium">
-            <div class="hb-simple-product-card__image radius-medium">
-              <img
-                src="https://cdn-netshop.lyreco.no/static/1541668401000000/images/EasyOrderHighResolution/47/48/asset.4944748.jpg"
-                alt="Produktnavn"
-                loading="lazy" />
-            </div>
-            <h3 class="hb-simple-product-card__title">
-              Lorem ipsum dolor sit amet.
-            </h3>
-            <div class="hb-simple-product-card__sku">Varenr: 000000</div>
-            <div class="hb-simple-product-card__cta">Se produkt</div>
-          </a>
-
-          <!-- Lim inn flere produkter -->
-        </div>
+        <!-- PRODUCT 5 -->
+        <a href="#" class="ly-carousel-product__card">
+          <div class="ly-carousel-product__image">
+            <img
+              src="https://placehold.co/200x170"
+              alt="Produktnavn"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="ly-carousel-product__title">Produktnavn her</h3>
+          <div class="ly-carousel-product__sku">Varenr: 000000</div>
+          <div class="ly-carousel-product__cta">Se produkt</div>
+        </a>
       </div>
     </section>
-    <!-- endregion -->
 
     <!-- #region carousel script -->
     <script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Feature Card</title>
-    <link rel="stylesheet" href="/Components/style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <base href="http://cdn-netshop.lyrecocontract.no/" />
   </head>
   <body>
@@ -29,140 +29,119 @@
         }
       </style>
 
-      <!-- #region SINGLE CARD -->
-      <style>
-        .ly-feature-card-link {
-          display: block;
-          max-width: 1440px;
-          margin: 0 auto;
-          text-decoration: none !important;
-          color: inherit;
-        }
+      <!-- LY-feature-single -->
+      <section class="ly-feature-single">
+        <style>
+          .ly-feature-single {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+          }
 
-        .ly-feature-card-link:focus-visible {
-          outline: 3px solid rgba(255, 255, 255, 0.9);
-          outline-offset: 6px;
-          border-radius: 10px;
-        }
+          .ly-feature-single__link {
+            display: block;
+            text-decoration: none !important;
+            color: inherit;
+          }
 
-        .ly-feature-card {
-          display: flex;
-          justify-content: space-evenly;
-          align-items: stretch;
-          overflow: hidden;
-        }
+          .ly-feature-single__card {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: stretch;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: var(--no-neutral-0, #ffffff);
+            color: var(--no-primary-500, #2d2e87);
+          }
 
-        .ly-feature-card--blue {
-          background-color: var(--no-primary-500);
-          color: var(--no-neutral-0);
-        }
+          .reverse-row {
+            flex-direction: row-reverse;
+          }
 
-        .ly-feature-card--gray {
-          background-color: var(--no-neutral-300);
-          color: var(--no-neutral-800);
-        }
+          .ly-feature-single__image {
+            flex: 1;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+          }
 
-        .ly-feature-card--reverse {
-          flex-direction: row-reverse;
-        }
+          .ly-feature-single__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
 
-        .ly-feature-card__image {
-          flex: 1;
-          overflow: hidden;
-          aspect-ratio: 4 / 3;
-        }
-
-        .ly-feature-card__image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .ly-feature-card__image--right img {
-          border-radius: 0 10px 10px 0;
-        }
-
-        .ly-feature-card__image--left img {
-          border-radius: 10px 0 0 10px;
-        }
-
-        .ly-feature-card__content {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 0 4rem;
-        }
-
-        .ly-feature-card__title {
-          font-size: var(--fo-36);
-          font-weight: 700;
-          margin: 0;
-          padding-right: 4rem;
-        }
-
-        .ly-feature-card__text {
-          margin: 20px 0;
-          font-size: 16px;
-          padding-right: 4rem;
-        }
-
-        @media (max-width: 768px) {
-          .ly-feature-card {
+          .ly-feature-single__content {
+            flex: 1;
+            display: flex;
             flex-direction: column;
+            justify-content: center;
+            padding: 0 4rem;
           }
 
-          .ly-feature-card__image {
-            height: 260px;
-            aspect-ratio: unset;
+          .ly-feature-single__title {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0;
+            padding-right: 4rem;
           }
 
-          .ly-feature-card__image img {
-            border-radius: 20px 20px 0 0;
+          .ly-feature-single__text {
+            margin: 20px 0;
+            font-size: 16px;
+            padding-right: 4rem;
+            line-height: 1.55;
           }
 
-          .ly-feature-card__content {
-            padding: 24px;
+          .ly-feature-single__cta {
+            margin-top: 24px;
           }
 
-          .ly-feature-card__title,
-          .ly-feature-card__text {
-            padding-right: 0;
+          @media (max-width: 768px) {
+            .ly-feature-single__card {
+              flex-direction: column;
+            }
+
+            .ly-feature-single__image {
+              height: 260px;
+              aspect-ratio: unset;
+            }
+
+            .ly-feature-single__content {
+              padding: 24px;
+            }
+
+            .ly-feature-single__title,
+            .ly-feature-single__text {
+              padding-right: 0;
+            }
           }
-        }
-      </style>
-      <a href="#" class="ly-feature-card-link">
-        <section class="ly-feature-card">
-          <!-- BILDE Bytt kun src (bildelenke) og endre teksten i alt-attributtet -->
-          <div class="ly-feature-card__image ly-feature-card__image--right">
-            <img
-              src="https://placehold.co/600x400"
-              alt="Beskrivende tekst for bildet" />
-          </div>
+        </style>
 
-          <!-- TEKSTINNHOLD Endre overskrift og tekst fritt innenfor h2 og p -->
-          <div class="ly-feature-card__content">
-            <h2 class="ly-feature-card__title">
-              Enkel og effektiv rengjøring etter festen - Alt du trenger på ett
-              sted
-            </h2>
-
-            <p class="ly-feature-card__text">
-              Når festen er over og gjestene har dratt, begynner jobben med å
-              rydde opp. Med riktig utstyr blir rengjøringen både enklere og mer
-              effektiv.
-            </p>
-
-            <!-- CTA-KNAPP Endre kun teksten (lenken styres av hele kortet) -->
-            <div
-              class="no-pill-btn no-pill-btn-brand-primary"
-              style="margin-top: 24px; margin-left: 0.9rem; font-size: 20px">
-              Se produktene her
+        <a href="#" class="ly-feature-single__link">
+          <div class="ly-feature-single__card">
+            <div class="ly-feature-single__image">
+              <img
+                src="https://placehold.co/700x525"
+                alt="Beskrivende bildetekst"
+              />
+            </div>
+            <div class="ly-feature-single__content">
+              <h2 class="ly-feature-single__title">
+                Overskrift for dette kortet
+              </h2>
+              <p class="ly-feature-single__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Beskrivende tekst som forklarer innholdet.
+              </p>
+              <div class="ly-feature-single__cta">
+                <span class="no-pill-btn no-pill-btn-brand-primary"
+                  >Se produktene her</span
+                >
+              </div>
             </div>
           </div>
-        </section>
-      </a>
-      <!-- endregion -->
+        </a>
+      </section>
     </section>
   </body>
 </html>
