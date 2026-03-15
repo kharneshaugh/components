@@ -29,13 +29,13 @@
         }
       </style>
 
-      <!-- #region TEXT HIGHLIGHTS (new) -->
-      <section class="ly-text-highlights" aria-labelledby="insp-tittel">
+      <!-- LY-highlights-text -->
+      <section class="ly-highlights-text">
         <style>
-          .ly-text-highlights {
+          .ly-highlights-text {
             max-width: 1440px;
             width: 100%;
-            margin: -2rem auto;
+            margin: 0 auto;
             display: flex;
             gap: 8px;
             overflow-x: auto;
@@ -43,17 +43,14 @@
             -webkit-overflow-scrolling: touch;
             scroll-snap-type: x mandatory;
             padding: 4px 0;
-          }
-
-          .ly-text-highlights::-webkit-scrollbar {
-            display: none;
-          }
-
-          .ly-text-highlights {
             scrollbar-width: none;
           }
 
-          .ly-text-highlight {
+          .ly-highlights-text::-webkit-scrollbar {
+            display: none;
+          }
+
+          .ly-highlights-text__card {
             flex: 0 0 360px;
             height: 220px;
             border-radius: 10px;
@@ -67,90 +64,93 @@
             transition: transform 0.3s ease;
           }
 
-          .ly-text-highlight:hover {
+          .ly-highlights-text__card:hover {
             transform: translateY(-10px);
           }
 
-          .ly-text-highlight--red {
-            background-color: var(--no-semantic-error-400) !important;
+          /* Color variants */
+          .ly-highlights-text__card--red {
+            background-color: var(--no-semantic-error-400, #fdd9d9);
           }
 
-          .ly-text-highlight--yellow {
-            background-color: var(--no-semantic-warning-400) !important;
+          .ly-highlights-text__card--yellow {
+            background-color: var(--no-semantic-warning-400, #ffefc8);
           }
 
-          .ly-text-highlight--primary-200 {
-            background-color: var(--no-primary-200) !important;
+          .ly-highlights-text__card--primary {
+            background-color: var(--no-primary-200, #e0e1f5);
           }
 
-          .ly-text-highlight__title {
+          .ly-highlights-text__card--mint {
+            background-color: var(--no-supporting-mint-300, #dbedde);
+          }
+
+          .ly-highlights-text__card--cerulean {
+            background-color: var(--no-supporting-cerulean-300, #bfe8ff);
+          }
+
+          .ly-highlights-text__title {
             margin: 0;
             padding: 3rem;
             font-size: 2.5rem;
-            line-height: 3.3rem;
+            line-height: 1.3;
             font-weight: 400;
-            color: var(--no-badges-promotions);
+            color: var(--no-badges-promotions, #d8345f);
           }
 
-          .ly-text-highlight__title strong {
+          .ly-highlights-text__title strong {
             font-weight: 800;
           }
 
           @media (max-width: 768px) {
-            .ly-text-highlight {
+            .ly-highlights-text__card {
               flex-basis: 300px;
             }
 
-            .ly-text-highlight__title {
+            .ly-highlights-text__title {
               padding: 2rem;
               font-size: 2rem;
-              line-height: 2.6rem;
+              line-height: 1.3;
+            }
+          }
+
+          @media (hover: none) {
+            .ly-highlights-text__card:hover {
+              transform: none;
             }
           }
         </style>
 
-        <!--
-    HIGHLIGHT
-    Endre kun:
-      - href (lenke)
-      - teksten i <h2>
-      - fargeklasse: --red / --yellow / --primary-200
-      - data-banner-id (hvis dere bruker tracking)
-  -->
+        <!-- CARD 1 -->
         <a
-          data-banner-id="highlight_kalender_planlegger"
-          href="/web/ePortal/ctrl?action=showgroup&nodeRI=345287018&utm_source=netshop"
-          class="ly-text-highlight ly-text-highlight--red"
+          href="#"
+          class="ly-highlights-text__card ly-highlights-text__card--red"
         >
-          <h2 class="ly-text-highlight__title">
-            Påskens <br />
-            søte <br /><strong>fristelser</strong>
+          <h2 class="ly-highlights-text__title">
+            Første<br />linje<br /><strong>fremhevet</strong>
           </h2>
         </a>
 
+        <!-- CARD 2 -->
         <a
-          data-banner-id="highlight_pappesker"
-          href="/web/ePortal/ctrl?action=showgroup&nodeRI=345287019"
-          class="ly-text-highlight ly-text-highlight--yellow"
+          href="#"
+          class="ly-highlights-text__card ly-highlights-text__card--yellow"
         >
-          <h2 class="ly-text-highlight__title">
-            <strong>Lys,</strong> <br />
-            <strong>servietter</strong> <br />og servietter
+          <h2 class="ly-highlights-text__title">
+            <strong>Ord,</strong><br /><strong>flere ord</strong><br />og mer
           </h2>
         </a>
 
+        <!-- CARD 3 -->
         <a
-          data-banner-id="highlight_torkepapir"
-          href="/c/hobbyprodukter-345287020"
-          class="ly-text-highlight ly-text-highlight--primary-200"
+          href="#"
+          class="ly-highlights-text__card ly-highlights-text__card--primary"
         >
-          <h2 class="ly-text-highlight__title">
-            Påskengøy <br />
-            med <br /><strong>hobby</strong>
+          <h2 class="ly-highlights-text__title">
+            Tittel<br />med<br /><strong>vekt</strong>
           </h2>
         </a>
       </section>
-      <!-- endregion -->
     </section>
   </body>
 </html>

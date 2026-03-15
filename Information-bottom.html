@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Information bottom</title>
-    <link rel="stylesheet" href="/Components/style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <base href="http://cdn-netshop.lyrecocontract.no/" />
   </head>
   <body>
@@ -31,23 +31,24 @@
       <!-- #region INFORMATION CARDS (domain gated) -->
       <section
         class="hb-domain-gated ly-info-cards-gate"
-        data-host-allow="lyreco.no"
+        data-host-allow=""
         data-host-deny="lyrecocontract.no"
         aria-hidden="true"
-        hidden>
-        <section class="ly-info-cards" aria-label="Membership and stores">
+        hidden
+      >
+        <!-- LY-cards-info -->
+        <section class="ly-cards-info" aria-label="Membership and stores">
           <style>
-            .ly-info-cards {
+            .ly-cards-info {
               width: 100%;
               max-width: 1440px;
               margin: 0 auto;
               display: grid;
-              grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+              grid-template-columns: 1fr 1fr;
               gap: 24px;
-              font-family: "Jost", system-ui, sans-serif;
             }
 
-            .ly-info-card {
+            .ly-cards-info__card {
               display: flex;
               flex-direction: column;
               min-height: 300px;
@@ -55,66 +56,66 @@
               border-radius: 10px;
               text-align: center;
               text-decoration: none !important;
-              color: var(--no-neutral-0) !important;
+              color: var(--no-neutral-0, #ffffff) !important;
               align-items: center;
               gap: 24px;
               overflow: hidden;
             }
 
-            .ly-info-card--member {
-              background-color: var(--no-badges-promotions);
+            .ly-cards-info__card--accent {
+              background-color: var(--no-badges-promotions, #d8345f);
             }
 
-            .ly-info-card--stores {
-              background-color: var(--no-primary-500);
+            .ly-cards-info__card--primary {
+              background-color: var(--no-primary-500, #2d2e87);
             }
 
-            .ly-info-card__badge {
+            .ly-cards-info__badge {
               width: 140px;
             }
 
-            .ly-info-card__badge img {
+            .ly-cards-info__badge img {
               width: 100%;
               display: block;
             }
 
-            .ly-info-card__icon {
+            .ly-cards-info__icon {
               display: flex;
               align-items: center;
               justify-content: center;
             }
 
-            .ly-info-card__icon svg {
+            .ly-cards-info__icon svg {
               height: 140px;
-              color: var(--no-neutral-0);
+              color: var(--no-neutral-0, #ffffff);
             }
 
-            .ly-info-card__content {
+            .ly-cards-info__content {
               max-width: 520px;
               display: grid;
               gap: 8px;
             }
 
-            .ly-info-card__title {
+            .ly-cards-info__title {
               margin: 0;
-              font-size: var(--fo-32);
+              font-size: 32px;
               font-weight: 800;
               line-height: 1.2;
             }
 
-            .ly-info-card__text {
+            .ly-cards-info__text {
               margin: 0;
-              font-size: var(--fo-20);
+              font-size: 20px;
               line-height: 1.6;
             }
 
-            .ly-info-card__actions {
+            .ly-cards-info__actions {
               margin-top: auto;
               display: flex;
               justify-content: center;
             }
 
-            .ly-info-card__btn {
+            .ly-cards-info__btn {
               min-height: 48px;
               width: 240px;
               padding: 0 20px;
@@ -125,95 +126,95 @@
               align-items: center;
               justify-content: center;
               transition: 0.3s;
+              background-color: var(--no-neutral-0, #ffffff);
             }
 
-            .ly-info-card__btn--member {
-              background-color: var(--no-neutral-0);
-              color: var(--no-badges-promotions);
+            .ly-cards-info__card--accent .ly-cards-info__btn {
+              color: var(--no-badges-promotions, #d8345f);
             }
 
-            .ly-info-card__btn--member:hover {
-              background-color: var(--no-badges-promotions);
-              color: var(--no-neutral-0);
-              border-color: var(--no-neutral-0);
+            .ly-cards-info__card--accent:hover .ly-cards-info__btn {
+              background-color: var(--no-badges-promotions, #d8345f);
+              color: var(--no-neutral-0, #ffffff);
+              border-color: var(--no-neutral-0, #ffffff);
             }
 
-            .ly-info-card__btn--stores {
-              background-color: var(--no-neutral-0);
-              color: var(--no-primary-500);
+            .ly-cards-info__card--primary .ly-cards-info__btn {
+              color: var(--no-primary-500, #2d2e87);
             }
 
-            .ly-info-card__btn--stores:hover {
-              background-color: var(--no-primary-500);
-              color: var(--no-neutral-0);
-              border-color: var(--no-neutral-0);
-            }
-
-            @media (max-width: 900px) {
-              .ly-info-card__title {
-                font-size: var(--fo-24);
-              }
+            .ly-cards-info__card--primary:hover .ly-cards-info__btn {
+              background-color: var(--no-primary-500, #2d2e87);
+              color: var(--no-neutral-0, #ffffff);
+              border-color: var(--no-neutral-0, #ffffff);
             }
 
             @media (max-width: 768px) {
-              .ly-info-cards {
+              .ly-cards-info {
                 grid-template-columns: 1fr;
                 gap: 16px;
               }
 
-              .ly-info-card {
+              .ly-cards-info__card {
                 min-height: 240px;
+              }
+
+              .ly-cards-info__title {
+                font-size: 24px;
               }
             }
           </style>
 
+          <!-- CARD 1 -->
           <a
             href="/a/rewards-kundeklubb"
-            class="ly-info-card ly-info-card--member">
-            <div class="ly-info-card__badge" aria-hidden="true">
+            class="ly-cards-info__card ly-cards-info__card--accent"
+          >
+            <div class="ly-cards-info__badge" aria-hidden="true">
               <img
                 src="/static/objectstore/kundeklubb_rosa_hovedelement_med_tekst.webp"
-                alt="Membership badge" />
+                alt="Membership badge"
+              />
             </div>
-
-            <div class="ly-info-card__content">
-              <h3 class="ly-info-card__title">Det lønner seg å være medlem!</h3>
-              <p class="ly-info-card__text">
+            <div class="ly-cards-info__content">
+              <h3 class="ly-cards-info__title">
+                Det lønner seg å være medlem!
+              </h3>
+              <p class="ly-cards-info__text">
                 Faste lave medlemspriser på over <strong>200</strong> varer.
               </p>
             </div>
-
-            <div class="ly-info-card__actions">
-              <span class="ly-info-card__btn ly-info-card__btn--member">
-                Bli medlem
-              </span>
+            <div class="ly-cards-info__actions">
+              <span class="ly-cards-info__btn">Bli medlem</span>
             </div>
           </a>
 
-          <a href="/butikker" class="ly-info-card ly-info-card--stores">
-            <div class="ly-info-card__icon" aria-hidden="true">
+          <!-- CARD 2 -->
+          <a
+            href="/butikker"
+            class="ly-cards-info__card ly-cards-info__card--primary"
+          >
+            <div class="ly-cards-info__icon" aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 256 256"
-                fill="currentColor">
+                fill="currentColor"
+              >
                 <path
-                  d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Z" />
+                  d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Z"
+                />
               </svg>
             </div>
-
-            <div class="ly-info-card__content">
-              <h3 class="ly-info-card__title">
+            <div class="ly-cards-info__content">
+              <h3 class="ly-cards-info__title">
                 Vi har butikker over hele landet!
               </h3>
-              <p class="ly-info-card__text">
+              <p class="ly-cards-info__text">
                 - kom innom for tips, idéer og spennende nyheter
               </p>
             </div>
-
-            <div class="ly-info-card__actions">
-              <span class="ly-info-card__btn ly-info-card__btn--stores">
-                Finn din nærmeste butikk
-              </span>
+            <div class="ly-cards-info__actions">
+              <span class="ly-cards-info__btn">Finn din nærmeste butikk</span>
             </div>
           </a>
         </section>

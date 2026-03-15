@@ -28,16 +28,16 @@
           }
         }
       </style>
-      <!-- #region ICON ROW  -->
-      <section class="ly-icon-row" aria-label="Quick category icons">
+      <!-- LY-menu-icon-row -->
+      <section class="ly-menu-icon-row" aria-label="Quick category icons">
         <style>
-          .ly-icon-row {
+          .ly-menu-icon-row {
             max-width: 1440px;
             width: 100%;
             margin: 0 auto;
           }
 
-          .ly-icon-row__list {
+          .ly-menu-icon-row__list {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -49,11 +49,11 @@
             scrollbar-width: thin;
           }
 
-          .ly-icon-row__list::-webkit-scrollbar {
+          .ly-menu-icon-row__list::-webkit-scrollbar {
             height: 6px;
           }
 
-          .ly-icon-row__item {
+          .ly-menu-icon-row__item {
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -63,81 +63,78 @@
             flex: 0 0 auto;
           }
 
-          .ly-icon-row__icon {
+          .ly-menu-icon-row__icon {
             width: 54px;
             height: 55px;
             flex: 0 0 auto;
           }
 
-          .ly-icon-row__text {
+          .ly-menu-icon-row__text {
             margin: 0;
-            font-size: var(--fo-24);
-            color: var(--no-primary-500);
+            font-size: 24px;
+            color: var(--no-primary-500, #2d2e87);
             line-height: 1.1;
           }
 
           @media (max-width: 768px) {
-            .ly-icon-row__list {
+            .ly-menu-icon-row__list {
               justify-content: flex-start;
             }
           }
         </style>
 
-        <!--
-    IKON-LENKE
-     Endre kun:
-      - href
-      - img src + alt
-      - teksten
-  -->
-        <div class="ly-icon-row__list">
-          <a href="#" class="ly-icon-row__item">
+        <div class="ly-menu-icon-row__list">
+          <!-- ITEM 1 -->
+          <a href="#" class="ly-menu-icon-row__item">
             <img
               src="/static/objectstore/LYRECO_front_icon_row_kopipapir.svg"
               alt="Kopipapir"
-              class="ly-icon-row__icon"
+              class="ly-menu-icon-row__icon"
             />
-            <p class="ly-icon-row__text">Kopipapir</p>
+            <p class="ly-menu-icon-row__text">Kopipapir</p>
           </a>
 
-          <a href="#" class="ly-icon-row__item">
+          <!-- ITEM 2 -->
+          <a href="#" class="ly-menu-icon-row__item">
             <img
               src="/static/objectstore/LYRECO_front_icon_row_kaffe.svg"
               alt="Kaffe"
-              class="ly-icon-row__icon"
+              class="ly-menu-icon-row__icon"
             />
-            <p class="ly-icon-row__text">Kaffe</p>
+            <p class="ly-menu-icon-row__text">Kaffe</p>
           </a>
 
-          <a href="#" class="ly-icon-row__item">
+          <!-- ITEM 3 -->
+          <a href="#" class="ly-menu-icon-row__item">
             <img
               src="/static/objectstore/LYRECO_front_icon_row_kontorrekvisita.svg"
               alt="Kontorrekvisita"
-              class="ly-icon-row__icon"
+              class="ly-menu-icon-row__icon"
             />
-            <p class="ly-icon-row__text">Kontorrekvisita</p>
+            <p class="ly-menu-icon-row__text">Kontorrekvisita</p>
           </a>
 
-          <a href="#" class="ly-icon-row__item">
+          <!-- ITEM 4 -->
+          <a href="#" class="ly-menu-icon-row__item">
             <img
               src="/static/objectstore/LYRECO_front_icon_row_kontorstol.svg"
               alt="Kontorstol"
-              class="ly-icon-row__icon"
+              class="ly-menu-icon-row__icon"
             />
-            <p class="ly-icon-row__text">Kontorstol</p>
+            <p class="ly-menu-icon-row__text">Kontorstol</p>
           </a>
 
-          <a href="#" class="ly-icon-row__item">
+          <!-- ITEM 5 -->
+          <a href="#" class="ly-menu-icon-row__item">
             <img
               src="/static/objectstore/LYRECO_front_icon_row_blekk_og_toner.svg"
               alt="Blekk og toner"
-              class="ly-icon-row__icon"
+              class="ly-menu-icon-row__icon"
             />
-            <p class="ly-icon-row__text">Blekk og toner</p>
+            <p class="ly-menu-icon-row__text">Blekk og toner</p>
           </a>
         </div>
       </section>
-      <!-- endregion -->
     </section>
   </body>
 </html>
