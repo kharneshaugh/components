@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LY-article-scroller</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+
+      <!-- LY-article-scroller -->
+      <section class="ly-article-scroller">
+        <style>
+          .ly-article-scroller {
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            overflow: hidden;
+          }
+
+          .ly-article-scroller__track {
+            display: flex;
+            gap: 16px;
+            padding: 8px 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+          }
+
+          .ly-article-scroller__track::-webkit-scrollbar {
+            display: none;
+          }
+
+          .ly-article-scroller__card {
+            flex: 0 0 320px;
+            background: var(--no-supporting-orange-300, #ffebcc);
+            scroll-snap-align: start;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            text-decoration: none !important;
+            color: var(--no-neutral-800, #2b303b);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            position: relative;
+          }
+
+          .ly-article-scroller__badge {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 16px;
+            background: var(--no-primary-100, #ececf9);
+            color: var(--no-neutral-800, #2b303b);
+            z-index: 2;
+          }
+
+          .ly-article-scroller__image {
+            flex: 5;
+            overflow: hidden;
+          }
+
+          .ly-article-scroller__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+
+          .ly-article-scroller__body {
+            flex: 4;
+            padding: 14px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+          }
+
+          .ly-article-scroller__title {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+          }
+
+          .ly-article-scroller__text {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.35;
+          }
+
+          .ly-article-scroller__cta {
+            margin-top: auto;
+            padding: 10px 16px;
+            border: 1px solid currentColor;
+            border-radius: 999px;
+            background: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            width: fit-content;
+            transition: all 0.2s ease;
+          }
+
+          .ly-article-scroller__card:hover .ly-article-scroller__cta {
+            background: var(--no-neutral-800, #2b303b);
+            color: #fff;
+          }
+
+          @media (max-width: 480px) {
+            .ly-article-scroller__card {
+              flex: 0 0 280px;
+            }
+          }
+        </style>
+
+        <div
+          class="ly-article-scroller__track"
+          aria-label="Artikler og inspirasjon"
+        >
+          <!-- CARD 1 -->
+          <a
+            class="ly-article-scroller__card radius-medium"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <div class="ly-article-scroller__image">
+              <span class="ly-article-scroller__badge radius-large">Badge</span>
+              <img src="https://placehold.co/600x340" alt="Bilde alt text" />
+            </div>
+            <div class="ly-article-scroller__body">
+              <h3 class="ly-article-scroller__title">Tittel her</h3>
+              <p class="ly-article-scroller__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                corporis.
+              </p>
+              <span class="ly-article-scroller__cta">Les mer her</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <a
+            class="ly-article-scroller__card radius-medium"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <div class="ly-article-scroller__image">
+              <span class="ly-article-scroller__badge radius-large">Badge</span>
+              <img src="https://placehold.co/600x340" alt="Bilde alt text" />
+            </div>
+            <div class="ly-article-scroller__body">
+              <h3 class="ly-article-scroller__title">Tittel her</h3>
+              <p class="ly-article-scroller__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                corporis.
+              </p>
+              <span class="ly-article-scroller__cta">Les mer her</span>
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a
+            class="ly-article-scroller__card radius-medium"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <div class="ly-article-scroller__image">
+              <span class="ly-article-scroller__badge radius-large">Badge</span>
+              <img src="https://placehold.co/600x340" alt="Bilde alt text" />
+            </div>
+            <div class="ly-article-scroller__body">
+              <h3 class="ly-article-scroller__title">Tittel her</h3>
+              <p class="ly-article-scroller__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                corporis.
+              </p>
+              <span class="ly-article-scroller__cta">Les mer her</span>
+            </div>
+          </a>
+
+          <!-- CARD 4 -->
+          <a
+            class="ly-article-scroller__card radius-medium"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <div class="ly-article-scroller__image">
+              <span class="ly-article-scroller__badge radius-large">Badge</span>
+              <img src="https://placehold.co/600x340" alt="Bilde alt text" />
+            </div>
+            <div class="ly-article-scroller__body">
+              <h3 class="ly-article-scroller__title">Tittel her</h3>
+              <p class="ly-article-scroller__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                corporis.
+              </p>
+              <span class="ly-article-scroller__cta">Les mer her</span>
+            </div>
+          </a>
+
+          <!-- CARD 5 -->
+          <a
+            class="ly-article-scroller__card radius-medium"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <div class="ly-article-scroller__image">
+              <span class="ly-article-scroller__badge radius-large">Badge</span>
+              <img src="https://placehold.co/600x340" alt="Bilde alt text" />
+            </div>
+            <div class="ly-article-scroller__body">
+              <h3 class="ly-article-scroller__title">Tittel her</h3>
+              <p class="ly-article-scroller__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                corporis.
+              </p>
+              <span class="ly-article-scroller__cta">Les mer her</span>
+            </div>
+          </a>
+        </div>
+
+        <script>
+          (function () {
+            document
+              .querySelectorAll(".ly-article-scroller")
+              .forEach(function (wrap) {
+                var track = wrap.querySelector(".ly-article-scroller__track");
+                if (!track) return;
+                function updateFades() {
+                  var maxScroll = track.scrollWidth - track.clientWidth;
+                  var left = track.scrollLeft;
+                  wrap.classList.toggle("is-left-fade", left > 2);
+                  wrap.classList.toggle("is-right-fade", left < maxScroll - 2);
+                }
+                track.addEventListener("scroll", function () {
+                  requestAnimationFrame(updateFades);
+                });
+                window.addEventListener("resize", updateFades);
+                updateFades();
+              });
+          })();
+        </script>
+      </section>
+    </section>
+  </body>
+</html>

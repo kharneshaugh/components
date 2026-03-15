@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain checker</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <!-- #region Information container Lyreco-->
+    <section
+      class="hb-domain-gated"
+      data-enabled="true"
+      data-host-allow="lyrecocontract.no"
+      data-host-deny="lyreco.no"
+      aria-hidden="true"
+      hidden
+      style="max-width: 1440px; width: 100%"
+    ></section>
+    <!-- endregion -->
+
+    <!-- #region DOMAIN GATED script -->
+    <script>
+      (function () {
+        var gates = document.querySelectorAll(".hb-domain-gated");
+        var host = location.hostname.toLowerCase();
+
+        function parseList(val) {
+          return (val || "")
+            .split(",")
+            .map((s) => s.trim().toLowerCase())
+            .filter(Boolean)
+            .map((s) => s.replace(/^https?:\/\//, "").replace(/\/+$/, ""));
+        }
+
+        gates.forEach(function (gate) {
+          var enabledAttr = (gate.dataset.enabled || "true").toLowerCase();
+          var isEnabled =
+            enabledAttr !== "false" &&
+            enabledAttr !== "off" &&
+            enabledAttr !== "0";
+
+          if (!isEnabled) {
+            gate.hidden = true;
+            gate.setAttribute("aria-hidden", "true");
+            return;
+          }
+
+          var allowed = parseList(gate.dataset.hostAllow);
+          var denied = parseList(gate.dataset.hostDeny);
+
+          var isAllowed = allowed.length
+            ? allowed.some((h) => host.endsWith(h))
+            : true;
+          var isDenied = denied.some((h) => host.endsWith(h));
+
+          if (isAllowed && !isDenied) {
+            gate.hidden = false;
+            gate.removeAttribute("aria-hidden");
+          } else {
+            gate.hidden = true;
+            gate.setAttribute("aria-hidden", "true");
+          }
+        });
+      })();
+    </script>
+    <!-- endregion -->
+  </body>
+</html>

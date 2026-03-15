@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <!-- #region Hero COUNTDOWN-->
+    <div class="khh-carousel-wrapper">
+      <style>
+        html {
+          -webkit-text-size-adjust: 100%;
+        }
+
+        .khh-banner-carousel-color {
+          display: flex !important;
+          justify-content: center;
+          width: 100%;
+          height: 400px;
+          color: var(--no-primary-500);
+        }
+
+        .khh-carousel-wrapper {
+          position: relative;
+          width: 100%;
+          max-width: 1440px;
+          max-height: 500px;
+          overflow: hidden;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+        }
+
+        .khh-carousel-track {
+          display: flex !important;
+          transition: transform 0.5s ease-in-out;
+          width: 100%;
+          height: 100%;
+        }
+
+        .khh-slide {
+          position: relative;
+          flex: 0 0 100%;
+          max-height: 500px;
+          box-sizing: border-box;
+          background: url("/static/objectstore/NO-lyreco-front-hero-background-1261x400.webp")
+            center/cover no-repeat;
+          color: var(--no-neutral-0);
+          overflow: hidden;
+          text-decoration: none !important;
+        }
+
+        .khh-slide-content {
+          display: flex !important;
+          flex-direction: column;
+          padding: 2rem 4rem;
+          gap: 1rem;
+          text-decoration: none;
+          margin-bottom: 4rem;
+          max-width: 700px;
+        }
+
+        .khh-slide-content h1,
+        .khh-slide-content h2 {
+          font-family: "Grauna", sans-serif;
+          line-height: 0.85;
+          font-weight: 400;
+        }
+
+        .khh-slide-content h1 {
+          font-size: 5.5rem;
+          margin: 0 0 1rem 0 !important;
+        }
+
+        .khh-slide-content h2 {
+          font-size: 4rem;
+          margin: 0 !important;
+        }
+
+        .khh-slide-content p {
+          margin: 0 !important;
+          font-size: 2rem;
+          font-weight: 300;
+          max-width: 700px;
+        }
+
+        .khh-slide-image {
+          position: absolute;
+          display: flex !important;
+          justify-content: flex-end;
+          height: 100%;
+          width: 100%;
+        }
+
+        .khh-slide-image img {
+          position: absolute;
+          object-fit: contain;
+          height: 100%;
+          right: 67px;
+          bottom: -1.5rem;
+        }
+
+        .no-hero-pill-cta {
+          position: absolute !important;
+          left: 4rem;
+          bottom: 2rem;
+          border: 1px solid var(--no-neutral-0);
+          background: var(--no-neutral-0);
+          color: var(--no-primary-500);
+          transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+          padding: 0.75rem 2rem;
+          border-radius: 999px;
+          font-weight: 600;
+          cursor: pointer;
+          font-size: 1.2rem;
+          max-width: 20rem;
+          font-family: "Jost";
+        }
+
+        .no-hero-pill-cta:hover {
+          background: transparent;
+          color: var(--no-neutral-0);
+        }
+
+        .khh-carousel-nav {
+          position: absolute !important;
+          bottom: 1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex !important;
+          gap: 0.5rem;
+          z-index: 10;
+        }
+
+        .khh-carousel-dot {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          border: 2px solid #0000007e;
+          background: rgba(255, 255, 255, 0.5);
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .khh-carousel-dot.active {
+          background: var(--no-neutral-0);
+        }
+
+        .khh-slide,
+        .khh-slide:visited,
+        .khh-slide:hover,
+        .khh-slide:active {
+          color: var(--no-neutral-0) !important;
+          text-decoration: none !important;
+        }
+
+        .hb-domain-gated[hidden] {
+          display: none !important;
+        }
+
+        .khh-slide-sales-badge {
+          position: absolute;
+          top: 1rem;
+          right: 0;
+          background-color: var(--no-badges-promotions) !important;
+          color: var(--no-neutral-0);
+          padding: 0.5rem 1rem;
+          border-radius: 6px 0 0 6px;
+          font-weight: 600;
+          font-size: 2rem;
+          z-index: 5;
+        }
+
+        @media (max-width: 1160px) {
+          .khh-slide-content h1 {
+            font-size: 5.5rem;
+          }
+        }
+
+        @media (max-width: 950px) {
+          .khh-slide-content h1 {
+            font-size: 5rem;
+          }
+          .khh-slide-content p {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .khh-slide {
+            display: flex !important;
+            flex-direction: column;
+            max-height: 500px;
+          }
+
+          .khh-slide-content {
+            padding: 1.5rem !important;
+            z-index: 10;
+          }
+
+          /* .khh-slide-image img {
+              display: none;
+            } */
+
+          .khh-slide-content h2 {
+            font-size: 2.7rem;
+          }
+
+          .khh-slide-content p {
+            display: none;
+          }
+
+          .no-hero-pill-cta {
+            left: 1.5rem;
+            bottom: 1.5rem;
+            max-width: none;
+            right: auto;
+            font-size: 1.25rem;
+          }
+
+          .khh-slide-sales-badge {
+            font-size: 1.5rem;
+          }
+        }
+
+        @media (max-width: 585px) {
+          .khh-slide-content {
+            padding: 5rem 1.5rem 2rem 1.5rem !important;
+          }
+          .khh-slide-content h1,
+          .khh-slide-content h2 {
+            font-size: 4rem;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .khh-slide-content h1 {
+            font-size: 3rem;
+          }
+          .khh-slide-content p {
+            font-size: 1rem;
+          }
+
+          .khh-slide-sales-badge {
+            font-size: 1rem;
+          }
+        }
+      </style>
+      <div class="khh-carousel-track" id="khh-carousel-track">
+        <!-- SLIDE: MEDLEMSDAG -->
+        <style>
+          .khh-slide-medlemsdag {
+            position: relative;
+            display: flex !important;
+            align-items: center;
+            background: url("/static/objectstore/NO-lyreco-front-hero-background-1261x400.webp")
+              center/cover no-repeat;
+            overflow: hidden;
+            height: 400px;
+          }
+
+          .khh-slide-medlemsdag-content {
+            max-width: 44rem;
+            z-index: 5;
+          }
+
+          .khh-slide-medlemsdag-heading {
+            position: absolute;
+            top: 3rem;
+            left: 5rem;
+            margin: 0;
+            font-family: "Grauna", sans-serif;
+            font-weight: 400;
+            line-height: 0.85;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            font-size: 5.625rem;
+          }
+
+          .khh-slide-medlemsdag-sub {
+            position: absolute;
+            top: 7.6rem;
+            left: 5rem;
+            font-family: "Jost";
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            opacity: 0.95;
+            color: #69eecf;
+          }
+
+          .khh-slide-medlemsdag-image {
+            position: absolute;
+            left: 79%;
+            bottom: -1%;
+            height: 100%;
+            width: min(720px, 58%);
+            display: flex !important;
+            align-items: flex-end;
+            justify-content: flex-end;
+            transform: translate(-75%, 0%);
+            z-index: 10;
+          }
+
+          .khh-slide-medlemsdag-image img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+          }
+
+          .khh-slide-medlemsdag-badge {
+            position: absolute;
+            right: -13%;
+            top: -57%;
+            height: 100%;
+            width: min(720px, 58%);
+            display: flex !important;
+            align-items: flex-end;
+            justify-content: flex-end;
+          }
+
+          .khh-slide-medlemsdag-badge img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+          }
+
+          .khh-slide-medlemsdag-badge span {
+            position: absolute;
+            right: 50%;
+            left: 56%;
+            bottom: -14%;
+            height: 100%;
+            width: min(720px, 58%);
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translate(-48%, 7%);
+            color: var(--no-primary-500);
+          }
+
+          .khh-slide-medlemsdag-badge p:nth-child(1) {
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.03em;
+          }
+
+          .khh-slide-medlemsdag-badge p:nth-child(2) {
+            font-size: 1rem;
+          }
+
+          .khh-slide-medlemsdag-cta {
+            position: absolute !important;
+            left: 5rem;
+            bottom: 5rem;
+            border: 1px solid var(--no-neutral-0);
+            background: var(--no-neutral-0);
+            color: var(--no-primary-500);
+            transition:
+              background-color 0.3s ease,
+              color 0.3s ease;
+            padding: 0.75rem 2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-family: "Jost";
+            z-index: 6;
+            text-align: center;
+            white-space: nowrap;
+          }
+
+          .khh-slide-medlemsdag-cta:hover {
+            background: transparent;
+            color: var(--no-neutral-0);
+          }
+
+          @media (max-width: 1070px) {
+            .khh-slide-medlemsdag-heading {
+              top: 2rem;
+              left: 2rem;
+              font-size: 4.25rem;
+              padding-left: 1rem;
+            }
+
+            .khh-slide-medlemsdag-sub {
+              top: 5.5rem;
+              left: 2rem;
+              padding-left: 1rem;
+            }
+
+            .khh-slide-medlemsdag-image {
+              right: 1rem;
+              width: min(640px, 62%);
+            }
+
+            .khh-slide-medlemsdag-cta {
+              left: 3.5rem;
+            }
+          }
+
+          @media (max-width: 1000px) {
+            .khh-slide-medlemsdag-badge {
+              right: -5%;
+            }
+          }
+
+          @media (max-width: 850px) {
+            .khh-slide-medlemsdag-badge {
+              right: -4%;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .khh-slide-medlemsdag-heading {
+              top: 1.2rem;
+              left: 1.2rem;
+              font-size: 3.25rem;
+            }
+
+            .khh-slide-medlemsdag-sub {
+              top: 4rem;
+              left: 1.2rem;
+              font-size: 2rem;
+            }
+
+            .khh-slide-medlemsdag-image,
+            .khh-slide-medlemsdag-image img {
+              display: none !important;
+            }
+
+            .khh-slide-medlemsdag-cta {
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: 1.5rem;
+              font-size: 1.25rem;
+              padding: 0.8rem 1.6rem;
+            }
+
+            .khh-slide-medlemsdag-badge {
+              right: -23%;
+              top: 14%;
+              bottom: auto;
+              transform: translate(-50%, -50%);
+              width: 300px;
+              height: 300px;
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .khh-slide-medlemsdag-badge img {
+              width: 300px;
+              height: 300px;
+              object-fit: contain;
+            }
+
+            .khh-slide-medlemsdag-badge span {
+              position: absolute;
+              right: 50%;
+              left: 50%;
+              bottom: 4%;
+              height: 100%;
+              width: min(720px, 58%);
+              display: flex !important;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              transform: translate(-48%, 7%);
+              color: var(--no-primary-500);
+            }
+
+            .khh-slide-medlemsdag-badge p:nth-child(1) {
+              font-size: 6rem;
+              font-weight: 900;
+              line-height: 0.85;
+              letter-spacing: -0.03em;
+            }
+
+            .khh-slide-medlemsdag-badge p:nth-child(2) {
+              font-size: 1rem;
+              text-align: center;
+            }
+          }
+
+          @media (max-width: 670px) {
+            .khh-slide-medlemsdag-badge {
+              left: 50%;
+              right: auto;
+              top: 55%;
+              bottom: auto;
+              transform: translate(-50%, -50%);
+              width: 300px;
+              height: 300px;
+              display: flex !important;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .khh-slide-medlemsdag-badge img {
+              width: 250px;
+              height: 250px;
+            }
+
+            .khh-slide-medlemsdag-badge span {
+              position: absolute;
+              right: 50%;
+              left: 50%;
+              bottom: 4%;
+              height: 100%;
+              width: min(720px, 58%);
+              display: flex !important;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              transform: translate(-48%, 7%);
+              color: var(--no-primary-500);
+            }
+
+            .khh-slide-medlemsdag-badge p:nth-child(1) {
+              font-size: 5rem;
+              font-weight: 900;
+              line-height: 0.85;
+              letter-spacing: -0.03em;
+            }
+
+            .khh-slide-medlemsdag-badge p:nth-child(2) {
+              font-size: 1rem;
+              text-align: center;
+            }
+          }
+
+          @media (max-width: 430px) {
+            .khh-slide-medlemsdag-badge {
+              left: 70%;
+              right: auto;
+              top: 80%;
+              bottom: auto;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          @media (max-width: 385px) {
+            .khh-slide-medlemsdag-heading {
+              left: 0;
+              font-size: 2.4rem;
+            }
+            .khh-slide-medlemsdag-sub {
+              left: 0;
+              top: 3.2rem;
+              font-size: 1rem;
+            }
+            .khh-slide-medlemsdag-cta {
+              font-size: 1.1rem;
+              width: 220px;
+            }
+          }
+        </style>
+
+        <div
+          data-banner-id="hero_medlemsdag"
+          class="khh-slide khh-slide-medlemsdag"
+          aria-label="Medlemsdag 26. februar"
+        >
+          <div class="khh-slide-medlemsdag-content">
+            <h2 class="khh-slide-medlemsdag-heading">Medlemsdag</h2>
+            <p class="khh-slide-medlemsdag-sub" style="margin: 0 !important">
+              26. februar
+            </p>
+          </div>
+
+          <div class="khh-slide-medlemsdag-image" aria-hidden="true">
+            <img
+              src="/static/objectstore/NO_front_hero__medlemsdag_feb_26.webp"
+              alt="Medlemsdag med -30% og konfetti"
+            />
+          </div>
+
+          <div class="khh-slide-medlemsdag-badge" aria-hidden="true">
+            <span>
+              <p style="margin: 0 !important">-30%</p>
+              <p style="margin: 0 !important">På hele kjøpet med få unntak</p>
+            </span>
+            <img
+              src="/static/objectstore/NO-lyreco-front-hero-teal-flower-whole.webp"
+              alt="Opptil -30 % rabatt"
+            />
+          </div>
+
+          <!-- <div class="khh-slide-medlemsdag-cta">Bli medlem</div> -->
+
+          <!-- #region FLIP COUNTDOWN CLOCK (FULL COMPONENT) -->
+          <div class="hb-medlem-klokke" data-target="2026-02-26T00:00:00+01:00">
+            <style>
+              .hb-medlem-klokke {
+                position: absolute;
+                bottom: 2rem;
+                left: 4.5rem;
+                z-index: 11;
+                --digit-h: 72px;
+                --half-h: calc(var(--digit-h) / 2);
+                --digit-w: 54px;
+
+                --gap-units: 14px;
+                --gap-digits: 10px;
+
+                --pad-y: 14px;
+                --pad-x: 14px;
+
+                display: inline-flex;
+                flex-wrap: nowrap;
+                gap: var(--gap-units);
+                padding: var(--pad-y) var(--pad-x);
+                border-radius: 12px;
+                background: transparent;
+                align-items: center;
+                font-family: inherit;
+
+                max-width: 100%;
+                box-sizing: border-box;
+              }
+
+              .hb-medlem-klokke__unit {
+                display: grid;
+                justify-items: center;
+                gap: 8px;
+                min-width: 96px;
+                flex: 0 0 auto;
+              }
+
+              .hb-medlem-klokke__label {
+                font-size: 12px;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #69eecf;
+                line-height: 1;
+              }
+
+              .hb-medlem-klokke__digits {
+                display: inline-flex;
+                gap: var(--gap-digits);
+              }
+
+              .hb-medlem-klokke__digit {
+                position: relative;
+                width: var(--digit-w);
+                height: var(--digit-h);
+                border-radius: 10px;
+                perspective: 900px;
+                overflow: hidden;
+                color: #1b2a7a;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+                font-variant-numeric: tabular-nums;
+
+                background: linear-gradient(180deg, #f7f8ff, #dfe7ff);
+              }
+
+              .hb-medlem-klokke__digit::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                height: 2px;
+                background: rgba(0, 0, 0, 0.25);
+                transform: translateY(-1px);
+                z-index: 10;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+              }
+
+              .hb-medlem-klokke__half {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 50%;
+                overflow: hidden;
+                z-index: 1;
+              }
+
+              .hb-medlem-klokke__half--top {
+                top: 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+              }
+
+              .hb-medlem-klokke__half--bottom {
+                bottom: 0;
+              }
+
+              .hb-medlem-klokke__flap {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 50%;
+                overflow: hidden;
+                backface-visibility: hidden;
+                z-index: 5;
+              }
+
+              .hb-medlem-klokke__flap--top {
+                top: 0;
+                transform-origin: bottom;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                transform: rotateX(0deg);
+              }
+
+              .hb-medlem-klokke__flap--bottom {
+                bottom: 0;
+                transform-origin: top;
+                transform: rotateX(90deg);
+              }
+
+              .hb-medlem-klokke__glyph {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: var(--digit-h);
+                display: grid;
+                place-items: center;
+
+                font-weight: 800;
+                font-size: 44px;
+                line-height: 1;
+                letter-spacing: 0;
+                color: #1b2a7a;
+
+                background: linear-gradient(180deg, #f7f8ff, #dfe7ff);
+              }
+
+              .hb-medlem-klokke__half--top .hb-medlem-klokke__glyph,
+              .hb-medlem-klokke__flap--top .hb-medlem-klokke__glyph {
+                top: 0;
+              }
+
+              .hb-medlem-klokke__half--bottom .hb-medlem-klokke__glyph,
+              .hb-medlem-klokke__flap--bottom .hb-medlem-klokke__glyph {
+                top: calc(-1 * var(--half-h));
+              }
+
+              /* Animations */
+              .hb-medlem-klokke__digit.is-flipping
+                .hb-medlem-klokke__flap--top {
+                animation: hbFlipTop 220ms ease-in forwards;
+              }
+
+              .hb-medlem-klokke__digit.is-flipping
+                .hb-medlem-klokke__flap--bottom {
+                animation: hbFlipBottom 240ms ease-out forwards;
+                animation-delay: 180ms;
+              }
+
+              @keyframes hbFlipTop {
+                from {
+                  transform: rotateX(0deg);
+                }
+                to {
+                  transform: rotateX(-90deg);
+                }
+              }
+
+              @keyframes hbFlipBottom {
+                from {
+                  transform: rotateX(90deg);
+                }
+                to {
+                  transform: rotateX(0deg);
+                }
+              }
+
+              @media (max-width: 1024px) {
+                .hb-medlem-klokke {
+                  left: 2rem;
+                  bottom: 1.75rem;
+
+                  --digit-h: 64px;
+                  --digit-w: 50px;
+
+                  --gap-units: 12px;
+                  --gap-digits: 9px;
+
+                  --pad-y: 12px;
+                  --pad-x: 12px;
+                }
+
+                .hb-medlem-klokke__unit {
+                  min-width: 90px;
+                }
+
+                .hb-medlem-klokke__glyph {
+                  font-size: 40px;
+                }
+              }
+
+              @media (max-width: 768px) {
+                .hb-medlem-klokke {
+                  left: 50%;
+                  right: auto;
+                  bottom: 1.25rem;
+                  transform: translateX(-50%);
+
+                  --digit-h: 56px;
+                  --digit-w: 44px;
+                  --gap-units: 10px;
+                  --gap-digits: 8px;
+                  --pad-y: 10px;
+                  --pad-x: 10px;
+                }
+
+                .hb-medlem-klokke__unit {
+                  min-width: 78px;
+                  gap: 7px;
+                }
+
+                .hb-medlem-klokke__label {
+                  font-size: 11px;
+                }
+
+                .hb-medlem-klokke__glyph {
+                  font-size: 34px;
+                }
+              }
+
+              @media (max-width: 430px) {
+                .hb-medlem-klokke {
+                  left: 30%;
+                  bottom: 9rem;
+                  display: grid;
+                  grid-template-columns: repeat(2, max-content);
+                  justify-content: center;
+                  align-content: center;
+                  column-gap: 12px;
+                  row-gap: 10px;
+                  padding: 8px;
+                }
+
+                .hb-medlem-klokke__unit {
+                  min-width: unset;
+                  width: max-content;
+                  padding: 0;
+                  gap: 6px;
+                }
+
+                .hb-medlem-klokke__digits {
+                  gap: 5px;
+                }
+
+                .hb-medlem-klokke__digit {
+                  width: 36px;
+                  height: 48px;
+                  border-radius: 9px;
+                }
+
+                .hb-medlem-klokke__glyph {
+                  font-size: 28px;
+                }
+
+                .hb-medlem-klokke__label {
+                  font-size: 10px;
+                  letter-spacing: 0.07em;
+                  margin-top: -2px;
+                }
+
+                .hb-medlem-klokke__half--bottom .hb-medlem-klokke__glyph,
+                .hb-medlem-klokke__flap--bottom .hb-medlem-klokke__glyph {
+                  top: calc(-1 * var(--half-h) + 5px);
+                }
+
+                @media (max-width: 430px) {
+                  .hb-medlem-klokke__half--top .hb-medlem-klokke__glyph,
+                  .hb-medlem-klokke__flap--top .hb-medlem-klokke__glyph {
+                    top: -1px;
+                  }
+                }
+              }
+
+              @media (max-width: 360px) {
+                .hb-medlem-klokke {
+                  bottom: 11rem;
+                  left: 32%;
+                  row-gap: 5px;
+                }
+                .hb-medlem-klokke__unit {
+                  padding: 0 5px;
+                  gap: 5px;
+                }
+              }
+
+              @media (max-width: 300px) {
+                .hb-medlem-klokke {
+                  left: 35%;
+                  row-gap: 4px;
+                }
+                .hb-medlem-klokke__unit {
+                  padding: 0 4px;
+                  gap: 4px;
+                }
+              }
+
+              @media (max-width: 300px) {
+                .hb-medlem-klokke {
+                  --digit-h: 40px;
+                  --digit-w: 30px;
+
+                  --gap-units: 7px;
+                  --gap-digits: 4px;
+
+                  --pad-y: 6px;
+                  --pad-x: 6px;
+
+                  row-gap: 8px;
+                }
+
+                .hb-medlem-klokke__label {
+                  font-size: 8px;
+                  letter-spacing: 0.06em;
+                }
+
+                .hb-medlem-klokke__glyph {
+                  font-size: 24px;
+                }
+              }
+            </style>
+
+            <!-- DAYS -->
+            <div class="hb-medlem-klokke__unit" data-unit="days">
+              <div class="hb-medlem-klokke__digits">
+                <div class="hb-medlem-klokke__digit" data-pos="0">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+                <div class="hb-medlem-klokke__digit" data-pos="1">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hb-medlem-klokke__label">DAGER</div>
+            </div>
+
+            <!-- HOURS -->
+            <div class="hb-medlem-klokke__unit" data-unit="hours">
+              <div class="hb-medlem-klokke__digits">
+                <div class="hb-medlem-klokke__digit" data-pos="0">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+                <div class="hb-medlem-klokke__digit" data-pos="1">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hb-medlem-klokke__label">TIMER</div>
+            </div>
+
+            <!-- MINUTES -->
+            <div class="hb-medlem-klokke__unit" data-unit="minutes">
+              <div class="hb-medlem-klokke__digits">
+                <div class="hb-medlem-klokke__digit" data-pos="0">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+                <div class="hb-medlem-klokke__digit" data-pos="1">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hb-medlem-klokke__label">MINUTTER</div>
+            </div>
+
+            <!-- SECONDS -->
+            <div class="hb-medlem-klokke__unit" data-unit="seconds">
+              <div class="hb-medlem-klokke__digits">
+                <div class="hb-medlem-klokke__digit" data-pos="0">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+                <div class="hb-medlem-klokke__digit" data-pos="1">
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__half hb-medlem-klokke__half--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--top"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                  <div
+                    class="hb-medlem-klokke__flap hb-medlem-klokke__flap--bottom"
+                  >
+                    <span class="hb-medlem-klokke__glyph">0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="hb-medlem-klokke__label">SEKUNDER</div>
+            </div>
+
+            <script>
+              (function () {
+                const root = document.querySelector(".hb-medlem-klokke");
+                if (!root) return;
+
+                const targetAttr = root.getAttribute("data-target");
+                const targetDate = targetAttr ? new Date(targetAttr) : null;
+                if (!targetDate || isNaN(targetDate.getTime())) return;
+
+                const prev = {
+                  days: "00",
+                  hours: "00",
+                  minutes: "00",
+                  seconds: "00",
+                };
+                const pad2 = (n) => String(n).padStart(2, "0");
+
+                function getParts() {
+                  const now = new Date();
+                  let diff = targetDate.getTime() - now.getTime();
+                  if (diff < 0) diff = 0;
+
+                  const totalSeconds = Math.floor(diff / 1000);
+                  const days = Math.floor(totalSeconds / 86400);
+                  const hours = Math.floor((totalSeconds % 86400) / 3600);
+                  const minutes = Math.floor((totalSeconds % 3600) / 60);
+                  const seconds = totalSeconds % 60;
+
+                  return {
+                    days: pad2(days % 100),
+                    hours: pad2(hours),
+                    minutes: pad2(minutes),
+                    seconds: pad2(seconds),
+                  };
+                }
+
+                function setGlyph(el, val) {
+                  const g = el.querySelector(".hb-medlem-klokke__glyph");
+                  if (g) g.textContent = val;
+                }
+
+                function flipDigit(digitEl, newChar, oldChar) {
+                  const topHalf = digitEl.querySelector(
+                    ".hb-medlem-klokke__half--top",
+                  );
+                  const botHalf = digitEl.querySelector(
+                    ".hb-medlem-klokke__half--bottom",
+                  );
+                  const flapTop = digitEl.querySelector(
+                    ".hb-medlem-klokke__flap--top",
+                  );
+                  const flapBot = digitEl.querySelector(
+                    ".hb-medlem-klokke__flap--bottom",
+                  );
+
+                  if (digitEl._t1) clearTimeout(digitEl._t1);
+                  if (digitEl._t2) clearTimeout(digitEl._t2);
+
+                  if (newChar === oldChar) {
+                    setGlyph(topHalf, newChar);
+                    setGlyph(botHalf, newChar);
+                    setGlyph(flapTop, newChar);
+                    setGlyph(flapBot, newChar);
+                    digitEl.classList.remove("is-flipping");
+                    return;
+                  }
+
+                  setGlyph(topHalf, oldChar);
+                  setGlyph(botHalf, newChar);
+
+                  setGlyph(flapTop, oldChar);
+                  setGlyph(flapBot, newChar);
+
+                  digitEl.classList.remove("is-flipping");
+                  void digitEl.offsetWidth;
+                  digitEl.classList.add("is-flipping");
+                  digitEl._t1 = setTimeout(() => {
+                    setGlyph(topHalf, newChar);
+                  }, 200);
+
+                  digitEl._t2 = setTimeout(() => {
+                    setGlyph(topHalf, newChar);
+                    setGlyph(botHalf, newChar);
+                    digitEl.classList.remove("is-flipping");
+                  }, 10000);
+                }
+
+                function render(next) {
+                  ["days", "hours", "minutes", "seconds"].forEach((unit) => {
+                    const unitEl = root.querySelector(`[data-unit="${unit}"]`);
+                    if (!unitEl) return;
+
+                    const digits = unitEl.querySelectorAll(
+                      ".hb-medlem-klokke__digit",
+                    );
+                    const oldStr = prev[unit];
+                    const newStr = next[unit];
+
+                    flipDigit(digits[0], newStr[0], oldStr[0]);
+                    flipDigit(digits[1], newStr[1], oldStr[1]);
+
+                    prev[unit] = newStr;
+                  });
+                }
+
+                const first = getParts();
+                prev.days = first.days;
+                prev.hours = first.hours;
+                prev.minutes = first.minutes;
+                prev.seconds = first.seconds;
+                render(first);
+
+                setInterval(() => {
+                  render(getParts());
+                }, 1000);
+              })();
+            </script>
+          </div>
+          <!-- endregion -->
+        </div>
+      </div>
+
+      <div class="khh-carousel-nav" id="khh-carousel-nav"></div>
+    </div>
+    <!-- endregion -->
+  </body>
+</html>

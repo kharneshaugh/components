@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LY-menu-3-color</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- LY-menu-3-color -->
+      <section class="ly-menu-3-color" aria-label="Quick navigation">
+        <style>
+          .ly-menu-3-color {
+            max-width: 1440px;
+            width: 100%;
+            display: flex;
+            gap: 24px;
+            min-height: 190px;
+          }
+
+          .ly-menu-3-color__link {
+            flex: 1;
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+          }
+
+          .ly-menu-3-color__item {
+            height: 100%;
+            width: 100%;
+            padding: 0 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            font-size: clamp(1.25rem, 1.02rem + 1.23vw, 2.125rem);
+            transition: background-color 0.25s ease;
+          }
+
+          .ly-menu-3-color__text {
+            display: inline;
+            line-height: 1.2;
+          }
+
+          .ly-menu-3-color__emphasis {
+            font-weight: 800;
+            border-bottom: 2px solid currentColor;
+            padding-bottom: 2px;
+          }
+
+          .ly-menu-3-color__icon {
+            width: 60px;
+            height: 80px;
+            object-fit: contain;
+            flex: 0 0 auto;
+          }
+
+          /* Color variants — edit these to change the theme */
+          .ly-menu-3-color__item--1 {
+            background-color: var(--no-semantic-error-300, #ffeded);
+            color: var(--no-semantic-error-600, #b20202);
+          }
+          .ly-menu-3-color__item--1:hover {
+            background-color: var(--no-semantic-error-400, #fdd9d9);
+          }
+
+          .ly-menu-3-color__item--2 {
+            background-color: var(--no-supporting-mint-300, #dbedde);
+            color: var(--no-supporting-mint-700, #1e3d24);
+          }
+          .ly-menu-3-color__item--2:hover {
+            background-color: var(--no-semantic-success-400, #c4f0a8);
+          }
+
+          .ly-menu-3-color__item--3 {
+            background-color: var(--no-supporting-purple-300, #ede2fd);
+            color: var(--no-supporting-purple-700, #4507a2);
+          }
+          .ly-menu-3-color__item--3:hover {
+            background-color: var(--no-semantic-info-400, #e1e3ea);
+          }
+
+          @media (max-width: 900px) {
+            .ly-menu-3-color {
+              flex-direction: column;
+              min-height: auto;
+            }
+
+            .ly-menu-3-color__item {
+              min-height: 190px;
+            }
+          }
+        </style>
+
+        <!--
+    ITEM — edit: href, text, emphasis word, icon src+alt, color variant (--1, --2, --3)
+  -->
+
+        <a class="ly-menu-3-color__link" href="#">
+          <div
+            class="ly-menu-3-color__item ly-menu-3-color__item--1 radius-medium"
+          >
+            <span class="ly-menu-3-color__text">
+              Alt du trenger
+              <span class="ly-menu-3-color__emphasis">FØR</span>
+              festen
+            </span>
+            <img
+              class="ly-menu-3-color__icon"
+              src="https://placehold.co/60x80"
+              alt=""
+            />
+          </div>
+        </a>
+
+        <a class="ly-menu-3-color__link" href="#">
+          <div
+            class="ly-menu-3-color__item ly-menu-3-color__item--2 radius-medium"
+          >
+            <span class="ly-menu-3-color__text">
+              Alt du trenger
+              <span class="ly-menu-3-color__emphasis">UNDER</span>
+              festen
+            </span>
+            <img
+              class="ly-menu-3-color__icon"
+              src="https://placehold.co/60x80"
+              alt=""
+            />
+          </div>
+        </a>
+
+        <a class="ly-menu-3-color__link" href="#">
+          <div
+            class="ly-menu-3-color__item ly-menu-3-color__item--3 radius-medium"
+          >
+            <span class="ly-menu-3-color__text">
+              Alt du trenger
+              <span class="ly-menu-3-color__emphasis">ETTER</span>
+              festen
+            </span>
+            <img
+              class="ly-menu-3-color__icon"
+              src="https://placehold.co/60x80"
+              alt=""
+            />
+          </div>
+        </a>
+      </section>
+    </section>
+  </body>
+</html>

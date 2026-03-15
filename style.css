@@ -1,0 +1,380 @@
+/* LYRECO */
+:root {
+  /* LYRECO */
+  /* PRIMARY */
+  --no-primary-50: #f7f7fc;
+  --no-primary-100: #ececf9;
+  --no-primary-200: #e0e1f5;
+  --no-primary-300: #b3b3e5;
+  --no-primary-400: #8c8ed9;
+  --no-primary-500: #2d2e87; /* BRAND */
+  --no-primary-600: #202160;
+  --no-primary-700: #131439;
+
+  /* SECONDARY */
+  --no-secondary-50: #f5fbe4;
+  --no-secondary-100: #eff9d2;
+  --no-secondary-200: #cce18d;
+  --no-secondary-300: #9ac31c; /* BRAND */
+  --no-secondary-400: #4d5e1b;
+  --no-secondary-500: #35430a;
+  --no-secondary-600: #242916;
+  --no-secondary-600: #101208;
+
+  /* NEUTRAL */
+  --no-neutral-0: #ffffff;
+  --no-neutral-100: #f6f7f9;
+  --no-neutral-200: #f0f2f4;
+  --no-neutral-300: #e1e3ea;
+  --no-neutral-400: #c4c9d4;
+  --no-neutral-500: #a6adbf;
+  --no-neutral-600: #6b7894;
+  --no-neutral-650: #51616f;
+  --no-neutral-700: #404859;
+  --no-neutral-800: #2b303b;
+
+  /* SEMANTIC */
+  /* SUCCESS */
+  --no-semantic-success-300: #e1f7d4;
+  --no-semantic-success-400: #c4f0a8;
+  --no-semantic-success-500: #a6e87d;
+  --no-semantic-success-600: #245d00;
+  --no-semantic-success-700: #2a401d;
+
+  /* WARNING */
+  --no-semantic-warning-300: #fff6df;
+  --no-semantic-warning-400: #ffefc8;
+  --no-semantic-warning-500: #ffe49e;
+  --no-semantic-warning-600: #ffb700;
+  --no-semantic-warning-700: #423004;
+
+  /* ERROR */
+  --no-semantic-error-300: #ffeded;
+  --no-semantic-error-400: #fdd9d9;
+  --no-semantic-error-500: #f7baba;
+  --no-semantic-error-600: #b20202;
+  --no-semantic-error-700: #660000;
+
+  /* INFO */
+  --no-semantic-info-300: #f0f2f4;
+  --no-semantic-info-400: #e1e3ea;
+  --no-semantic-info-500: #a6adbf;
+  --no-semantic-info-600: #6b7894;
+  --no-semantic-info-700: #404859;
+
+  /* SUPPORTING */
+  /* MINT */
+  --no-supporting-mint-300: #dbedde;
+  --no-supporting-mint-700: #1e3d24;
+
+  /* SAND */
+  --no-supporting-sand-300: #f9ebaa;
+  --no-supporting-sand-700: #4c4005;
+
+  /* PURPLE */
+  --no-supporting-purple-300: #ede2fd;
+  --no-supporting-purple-700: #4507a2;
+
+  /* CERULEAN */
+  --no-supporting-cerulean-300: #bfe8ff;
+  --no-supporting-cerulean-700: #004166;
+
+  /* ORANGE */
+  --no-supporting-orange-300: #ffebcc;
+  --no-supporting-orange-700: #e68a00;
+
+  /* BADGES */
+  /* SELECTION */
+  --no-badges-selection: #004166;
+
+  /* SUSTAINABLE */
+  --no-badges-sustainable: #1e3d24;
+
+  /* ASSEMBLY */
+  --no-badges-assembly: #4c4005;
+
+  /* NEW */
+  --no-badges-new: #4507a2;
+
+  /* PROMOTIONS */
+  --no-badges-promotions: #d8345f;
+
+  /* OUTLET */
+  --no-badges-outlet: #e68a00;
+
+  /* NOA */
+  --no-noa-light-green: #c8e39e;
+
+  /* FONT SIZE */
+  --fo-8: 0.5rem;
+  --fo-10: 0.625rem;
+  --fo-12: 0.75rem;
+  --fo-14: 0.875rem;
+  --fo-16: 1rem;
+  --fo-18: 1.125rem;
+  --fo-20: 1.25rem;
+  --fo-22: 1.375rem;
+  --fo-24: 1.5rem;
+  --fo-26: 1.625rem;
+  --fo-28: 1.75rem;
+  --fo-30: 1.875rem;
+  --fo-32: 2rem;
+  --fo-34: 2.125rem;
+  --fo-36: 2.25rem;
+  --fo-38: 2.375rem;
+  --fo-40: 2.5rem;
+  --fo-42: 2.625rem;
+  --fo-44: 2.75rem;
+  --fo-46: 2.875rem;
+  --fo-48: 3rem;
+  --fo-50: 3.125rem;
+  --fo-52: 3.25rem;
+  --fo-54: 3.375rem;
+  --fo-56: 3.5rem;
+  --fo-64: 4rem;
+  --fo-72: 4.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+.no-pill-aside-cta {
+  width: 170px;
+  border: 1px solid var(--no-neutral-0);
+  background-color: var(--no-neutral-0);
+  color: var(--no-primary-500);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.no-pill-aside-cta:hover {
+  background: none;
+  color: var(--no-neutral-0, #2d2e87);
+}
+
+.hb-badge {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.hb-product-card-cta {
+  display: flex !important;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  width: 100%;
+  height: 40px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 4px 0;
+  border-radius: 99px;
+  border: 1px solid var(--no-primary-500);
+  background: var(--no-primary-500);
+  color: var(--no-neutral-0);
+}
+
+.hb-product-card-cta:hover,
+.hb-product-card-cta:focus {
+  background-color: var(--no-neutral-0);
+  border: 1px solid var(--no-primary-500);
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}
+
+.hb-product-card-cta a:hover {
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}
+
+.hb-product-card-link,
+.hb-product-card-link:hover,
+.hb-product-card-link:focus,
+.hb-product-card-cta,
+.hb-product-card-cta:hover,
+.hb-product-card-cta:focus {
+  text-decoration: none;
+}
+
+.hb-product-card-cta a,
+.hb-product-card-cta a:hover,
+.hb-product-card-cta a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.radius-small {
+  border-radius: 4px;
+}
+
+.radius-medium {
+  border-radius: 10px;
+}
+
+.radius-large {
+  border-radius: 20px;
+}
+
+.radius-round {
+  border-radius: 99px;
+}
+
+.quick-access-button {
+  height: 48px;
+  min-width: 120px;
+  border: 1px solid var(--no-primary-500);
+  background-color: var(--no-neutral-0);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: padding 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--no-primary-500);
+}
+
+.quick-access-button:hover {
+  border: 1px solid var(--no-primary-500);
+  background-color: var(--no-primary-500);
+  color: var(--no-neutral-0);
+}
+
+.no-pill-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: 50px;
+  border-radius: 99px;
+  padding: 0 24px;
+  font-size: 16px;
+  max-width: fit-content;
+  font-size: 16px;
+}
+
+.no-pill-btn-brand-primary {
+  border: 1px solid var(--no-primary-500);
+  background: var(--no-primary-500);
+  color: var(--no-neutral-0);
+  transition: 0.5s;
+}
+
+.no-pill-btn-brand-primary:hover {
+  background-color: var(--no-neutral-0);
+  border: 1px solid var(--no-primary-500);
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}
+
+.no-pill-btn-supporting-cerulean {
+  border: 1px solid var(--no-supporting-purple-300);
+  background: var(--no-supporting-cerulean-300);
+  color: var(--no-neutral-0);
+  transition: 0.5s;
+}
+
+.no-pill-btn-supporting-cerulean:hover {
+  background-color: var(--no-neutral-0);
+  border: 1px solid var(--no-primary-500);
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}
+
+.no-pill-btn-badges-promotion {
+  border: 1px solid var(--no-badges-promotions);
+  background-color: var(--no-badges-promotions);
+  color: var(--no-neutral-0);
+  transition: 0.5s;
+}
+
+.no-pill-btn-badges-promotion:hover {
+  background-color: var(--no-neutral-0);
+  color: var(--no-badges-promotions);
+  transition: 0.5s;
+}
+
+.no-pill-btn-neutral-light {
+  border: 1px solid var(--no-neutral-0);
+  background-color: none;
+  color: var(--no-neutral-0);
+  transition: 0.5s;
+}
+
+.no-pill-btn-neutral-light:hover {
+  background-color: var(--no-neutral-0);
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}
+
+.no-pill-btn-neutral-dark {
+  border: 1px solid var(--no-neutral-800);
+  background-color: var(--no-neutral-800);
+  color: var(--no-neutral-0);
+  transition: 0.5s;
+}
+
+.no-pill-btn-neutral-dark:hover {
+  background-color: var(--no-neutral-0);
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}
+
+.no-pill-btn-neutral-white {
+  border: 1px solid var(--no-neutral-800);
+  background-color: var(--no-neutral-0);
+  color: var(--no-neutral-800);
+  transition: 0.5s;
+}
+
+.no-pill-btn-neutral-white:hover {
+  background-color: var(--no-neutral-800);
+  color: var(--no-neutral-0);
+  transition: 0.5s;
+}
+
+.no-pill-btn-semantic-warning {
+  border: 1px solid var(--no-semantic-warning-700);
+  background-color: var(--no-semantic-warning-700);
+  color: var(--no-neutral-0);
+}
+
+.no-pill-btn-semantic-warning:hover {
+  border: 1px solid var(--no-semantic-warning-700);
+  background-color: var(--no-neutral-0);
+  color: var(--no-semantic-warning-700);
+}
+
+.product-scroll-btn {
+  text-align: center;
+  max-width: 145px;
+  width: 100%;
+  height: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 16px auto 20px -4px;
+  border-radius: 99px;
+  padding: 0 14px;
+  border: 1px solid var(--no-primary-500);
+  background: var(--no-primary-500);
+  color: var(--no-neutral-0);
+}
+
+.product-scroll-btn:hover {
+  background-color: var(--no-neutral-0);
+  border: 1px solid var(--no-primary-500);
+  color: var(--no-primary-500);
+  transition: 0.5s;
+}

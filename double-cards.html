@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LY-cards-double</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <!-- LY-cards-double -->
+    <section class="ly-cards-double">
+      <style>
+        .ly-cards-double {
+          max-width: 1440px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .ly-cards-double__grid {
+          display: flex;
+          gap: 24px;
+        }
+
+        .ly-cards-double__card {
+          flex: 1 1 0;
+          display: flex;
+        }
+
+        .ly-cards-double__link {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          background: var(--no-neutral-0, #ffffff);
+          text-decoration: none !important;
+          color: inherit;
+          overflow: hidden;
+          transition: box-shadow 0.2s ease;
+        }
+
+        .ly-cards-double__media {
+          width: 100%;
+          height: 380px;
+          object-fit: cover;
+          display: block;
+        }
+
+        .ly-cards-double__body {
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          flex: 1 1 auto;
+        }
+
+        .ly-cards-double__title {
+          margin: 0;
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--no-primary-600, #202160);
+          line-height: 1.2;
+        }
+
+        .ly-cards-double__text {
+          margin: 0;
+          font-size: 16px;
+          line-height: 1.55;
+          color: var(--no-primary-600, #202160);
+        }
+
+        .ly-cards-double__cta {
+          padding: 0 20px 20px 20px;
+          margin-top: auto;
+        }
+
+        .ly-cards-double__cta .no-pill-btn {
+          transition: all 0.25s ease;
+        }
+
+        .ly-cards-double__link:hover .no-pill-btn {
+          background: var(--no-neutral-0, #ffffff);
+          border-color: var(--no-primary-700, #131439);
+          color: var(--no-primary-500, #2d2e87);
+        }
+
+        @media (max-width: 768px) {
+          .ly-cards-double__grid {
+            flex-direction: column;
+            gap: 16px;
+          }
+        }
+      </style>
+
+      <div class="ly-cards-double__grid">
+        <!-- CARD 1 -->
+        <article class="ly-cards-double__card">
+          <a
+            class="ly-cards-double__link"
+            href="#"
+            style="text-decoration: none !important"
+            aria-label="Kort 1"
+          >
+            <img
+              class="ly-cards-double__media radius-medium"
+              src="https://placehold.co/700x380"
+              alt="Beskrivende bildetekst"
+            />
+            <div class="ly-cards-double__body">
+              <h2 class="ly-cards-double__title">Tittel her</h2>
+              <p class="ly-cards-double__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Asperiores ab ullam magni laborum minus eligendi ut, id
+                quibusdam facere corporis ipsum quo nostrum harum nobis.
+              </p>
+            </div>
+            <div class="ly-cards-double__cta">
+              <div class="no-pill-btn no-pill-btn-brand-primary">Les mer</div>
+            </div>
+          </a>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="ly-cards-double__card">
+          <a
+            class="ly-cards-double__link"
+            href="#"
+            style="text-decoration: none !important"
+            aria-label="Kort 2"
+          >
+            <img
+              class="ly-cards-double__media radius-medium"
+              src="https://placehold.co/700x380"
+              alt="Beskrivende bildetekst"
+            />
+            <div class="ly-cards-double__body">
+              <h2 class="ly-cards-double__title">Tittel her</h2>
+              <p class="ly-cards-double__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+                aspernatur neque nemo tenetur! Odio ea cumque laborum velit
+                beatae reiciendis consectetur exercitationem illo assumenda.
+              </p>
+            </div>
+            <div class="ly-cards-double__cta">
+              <div class="no-pill-btn no-pill-btn-brand-primary">Les mer</div>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

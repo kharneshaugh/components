@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LY-cta-bottom</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- LY-cta-bottom -->
+      <section class="ly-cta-bottom">
+        <style>
+          .ly-cta-bottom {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+          }
+
+          .ly-cta-bottom__link {
+            display: block;
+            overflow: hidden;
+            background: var(--no-supporting-cerulean-300, #bfe8ff);
+            padding: 22px 24px 22px 68px;
+            text-decoration: none !important;
+            color: inherit;
+            transition: transform 0.2s ease;
+          }
+
+          .ly-cta-bottom__title {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--no-primary-500, #2d2e87);
+          }
+
+          .ly-cta-bottom__text {
+            margin: 8px 0 0;
+            color: var(--no-neutral-800, #2b303b);
+            line-height: 1.65;
+            max-width: 95ch;
+          }
+
+          .ly-cta-bottom__actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+          }
+
+          .ly-cta-bottom__actions .no-pill-btn {
+            transition: all 0.25s ease;
+          }
+
+          .ly-cta-bottom__link:hover .no-pill-btn {
+            background: var(--no-neutral-0, #131439);
+            border-color: var(--no-primary-700, #131439);
+            color: var(--no-primary-500);
+          }
+
+          @media (max-width: 768px) {
+            .ly-cta-bottom__link {
+              padding: 20px;
+            }
+          }
+        </style>
+
+        <a
+          href="#"
+          class="ly-cta-bottom__link radius-medium"
+          aria-label="Call to action"
+        >
+          <h2 class="ly-cta-bottom__title">Tittel for call to action</h2>
+          <p class="ly-cta-bottom__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
+            ipsum.
+          </p>
+          <div class="ly-cta-bottom__actions">
+            <div class="no-pill-btn no-pill-btn-brand-primary">Knappetekst</div>
+          </div>
+        </a>
+      </section>
+    </section>
+  </body>
+</html>

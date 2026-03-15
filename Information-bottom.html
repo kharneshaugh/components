@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information bottom</title>
+    <link rel="stylesheet" href="/Components/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- #region INFORMATION CARDS (domain gated) -->
+      <section
+        class="hb-domain-gated ly-info-cards-gate"
+        data-host-allow="lyreco.no"
+        data-host-deny="lyrecocontract.no"
+        aria-hidden="true"
+        hidden>
+        <section class="ly-info-cards" aria-label="Membership and stores">
+          <style>
+            .ly-info-cards {
+              width: 100%;
+              max-width: 1440px;
+              margin: 0 auto;
+              display: grid;
+              grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+              gap: 24px;
+              font-family: "Jost", system-ui, sans-serif;
+            }
+
+            .ly-info-card {
+              display: flex;
+              flex-direction: column;
+              min-height: 300px;
+              padding: 32px;
+              border-radius: 10px;
+              text-align: center;
+              text-decoration: none !important;
+              color: var(--no-neutral-0) !important;
+              align-items: center;
+              gap: 24px;
+              overflow: hidden;
+            }
+
+            .ly-info-card--member {
+              background-color: var(--no-badges-promotions);
+            }
+
+            .ly-info-card--stores {
+              background-color: var(--no-primary-500);
+            }
+
+            .ly-info-card__badge {
+              width: 140px;
+            }
+
+            .ly-info-card__badge img {
+              width: 100%;
+              display: block;
+            }
+
+            .ly-info-card__icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .ly-info-card__icon svg {
+              height: 140px;
+              color: var(--no-neutral-0);
+            }
+
+            .ly-info-card__content {
+              max-width: 520px;
+              display: grid;
+              gap: 8px;
+            }
+
+            .ly-info-card__title {
+              margin: 0;
+              font-size: var(--fo-32);
+              font-weight: 800;
+              line-height: 1.2;
+            }
+
+            .ly-info-card__text {
+              margin: 0;
+              font-size: var(--fo-20);
+              line-height: 1.6;
+            }
+
+            .ly-info-card__actions {
+              margin-top: auto;
+              display: flex;
+              justify-content: center;
+            }
+
+            .ly-info-card__btn {
+              min-height: 48px;
+              width: 240px;
+              padding: 0 20px;
+              border-radius: 999px;
+              font-weight: 700;
+              border: 2px solid transparent;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              transition: 0.3s;
+            }
+
+            .ly-info-card__btn--member {
+              background-color: var(--no-neutral-0);
+              color: var(--no-badges-promotions);
+            }
+
+            .ly-info-card__btn--member:hover {
+              background-color: var(--no-badges-promotions);
+              color: var(--no-neutral-0);
+              border-color: var(--no-neutral-0);
+            }
+
+            .ly-info-card__btn--stores {
+              background-color: var(--no-neutral-0);
+              color: var(--no-primary-500);
+            }
+
+            .ly-info-card__btn--stores:hover {
+              background-color: var(--no-primary-500);
+              color: var(--no-neutral-0);
+              border-color: var(--no-neutral-0);
+            }
+
+            @media (max-width: 900px) {
+              .ly-info-card__title {
+                font-size: var(--fo-24);
+              }
+            }
+
+            @media (max-width: 768px) {
+              .ly-info-cards {
+                grid-template-columns: 1fr;
+                gap: 16px;
+              }
+
+              .ly-info-card {
+                min-height: 240px;
+              }
+            }
+          </style>
+
+          <a
+            href="/a/rewards-kundeklubb"
+            class="ly-info-card ly-info-card--member">
+            <div class="ly-info-card__badge" aria-hidden="true">
+              <img
+                src="/static/objectstore/kundeklubb_rosa_hovedelement_med_tekst.webp"
+                alt="Membership badge" />
+            </div>
+
+            <div class="ly-info-card__content">
+              <h3 class="ly-info-card__title">Det lønner seg å være medlem!</h3>
+              <p class="ly-info-card__text">
+                Faste lave medlemspriser på over <strong>200</strong> varer.
+              </p>
+            </div>
+
+            <div class="ly-info-card__actions">
+              <span class="ly-info-card__btn ly-info-card__btn--member">
+                Bli medlem
+              </span>
+            </div>
+          </a>
+
+          <a href="/butikker" class="ly-info-card ly-info-card--stores">
+            <div class="ly-info-card__icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 256"
+                fill="currentColor">
+                <path
+                  d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Z" />
+              </svg>
+            </div>
+
+            <div class="ly-info-card__content">
+              <h3 class="ly-info-card__title">
+                Vi har butikker over hele landet!
+              </h3>
+              <p class="ly-info-card__text">
+                - kom innom for tips, idéer og spennende nyheter
+              </p>
+            </div>
+
+            <div class="ly-info-card__actions">
+              <span class="ly-info-card__btn ly-info-card__btn--stores">
+                Finn din nærmeste butikk
+              </span>
+            </div>
+          </a>
+        </section>
+      </section>
+      <!-- endregion -->
+
+      <!-- #region DOMAIN GATED script -->
+      <script>
+        (function () {
+          var gates = document.querySelectorAll(".hb-domain-gated");
+          var host = location.hostname.toLowerCase();
+
+          function parseList(val) {
+            return (val || "")
+              .split(",")
+              .map(function (s) {
+                return s.trim().toLowerCase();
+              })
+              .filter(Boolean)
+              .map(function (s) {
+                return s.replace(/^https?:\/\//, "").replace(/\/+$/, "");
+              });
+          }
+
+          gates.forEach(function (gate) {
+            var allowed = parseList(gate.dataset.hostAllow);
+            var denied = parseList(gate.dataset.hostDeny);
+
+            var isAllowed = allowed.length
+              ? allowed.some(function (h) {
+                  return host.endsWith(h);
+                })
+              : true;
+
+            var isDenied = denied.some(function (h) {
+              return host.endsWith(h);
+            });
+
+            if (isAllowed && !isDenied) {
+              gate.hidden = false;
+              gate.removeAttribute("aria-hidden");
+            } else {
+              gate.hidden = true;
+              gate.setAttribute("aria-hidden", "true");
+            }
+          });
+        })();
+      </script>
+      <!-- endregion -->
+    </section>
+  </body>
+</html>

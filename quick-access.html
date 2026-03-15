@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick access</title>
+    <link rel="stylesheet" href="/Components/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+
+      <!-- #region QUICK ACCESS (cleaned) -->
+      <div class="ly-quick-access">
+        <style>
+          .ly-quick-access {
+            max-width: 1440px;
+            width: 100%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .ly-quick-access__list {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+          }
+
+          .ly-quick-access__list::-webkit-scrollbar {
+            display: none;
+          }
+
+          .ly-quick-access__link {
+            text-decoration: none !important;
+            flex: 1;
+          }
+
+          .ly-quick-access__button {
+            height: 48px;
+            min-width: 120px;
+            border: 1px solid var(--no-primary-500);
+            background-color: var(--no-neutral-0);
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+            color: var(--no-primary-500);
+            transition:
+              background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease;
+          }
+
+          .ly-quick-access__button:hover,
+          .ly-quick-access__button.is-active {
+            border-color: var(--no-primary-500);
+            background-color: var(--no-primary-500);
+            color: var(--no-neutral-0);
+          }
+
+          .ly-quick-access__scroll-indicator {
+            position: absolute;
+            top: 28px;
+            right: 8px;
+            transform: translateY(-50%);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+            pointer-events: none;
+          }
+
+          .ly-quick-access.is-arrow-hidden .ly-quick-access__scroll-indicator {
+            opacity: 0;
+          }
+
+          @media (max-width: 768px) {
+            .ly-quick-access__link:not(:last-child) {
+              margin-right: 10px;
+            }
+
+            .ly-quick-access__scroll-indicator {
+              display: flex;
+            }
+          }
+        </style>
+
+        <section class="ly-quick-access__list" data-ly-quick-access>
+          <!-- Endre link mellom "" i href til ønsket URL for hver kategori -->
+          <a class="ly-quick-access__link" href="#">
+            <!-- Endre navn på kategorien mellom <div class="ly-quick-access__button radius-medium">KATEGORI</div> -->
+            <div class="ly-quick-access__button radius-medium">KATEGORI</div>
+          </a>
+          <!-- Endre link mellom "" i href til ønsket URL for hver kategori -->
+          <a class="ly-quick-access__link" href="#">
+            <!-- Endre navn på kategorien mellom <div class="ly-quick-access__button radius-medium">KATEGORI</div> -->
+            <div class="ly-quick-access__button radius-medium">KATEGORI</div>
+          </a>
+          <!-- Endre link mellom "" i href til ønsket URL for hver kategori -->
+          <a class="ly-quick-access__link" href="#">
+            <!-- Endre navn på kategorien mellom <div class="ly-quick-access__button radius-medium">KATEGORI</div> -->
+            <div class="ly-quick-access__button radius-medium">KATEGORI</div>
+          </a>
+          <!-- Endre link mellom "" i href til ønsket URL for hver kategori -->
+          <a class="ly-quick-access__link" href="#">
+            <!-- Endre navn på kategorien mellom <div class="ly-quick-access__button radius-medium">KATEGORI</div> -->
+            <div class="ly-quick-access__button radius-medium">KATEGORI</div>
+          </a>
+        </section>
+
+        <div class="ly-quick-access__scroll-indicator" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="#2d2e87"
+            viewBox="0 0 256 256">
+            <path
+              d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+          </svg>
+        </div>
+
+        <script>
+          (function () {
+            document
+              .querySelectorAll(".ly-quick-access")
+              .forEach(function (component) {
+                var list = component.querySelector("[data-ly-quick-access]");
+                if (!list) return;
+
+                function updateArrow() {
+                  var canScroll = list.scrollWidth > list.clientWidth + 1;
+                  component.classList.toggle("is-arrow-hidden", !canScroll);
+
+                  if (canScroll) {
+                    var atEnd =
+                      list.scrollLeft + list.clientWidth >=
+                      list.scrollWidth - 2;
+                    component.classList.toggle("is-arrow-hidden", atEnd);
+                  }
+                }
+
+                updateArrow();
+                list.addEventListener("scroll", updateArrow, { passive: true });
+                window.addEventListener("resize", updateArrow);
+              });
+          })();
+        </script>
+      </div>
+      <!-- endregion -->
+    </section>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highlights</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+
+      <!-- #region TEXT HIGHLIGHTS (new) -->
+      <section class="ly-text-highlights" aria-labelledby="insp-tittel">
+        <style>
+          .ly-text-highlights {
+            max-width: 1440px;
+            width: 100%;
+            margin: -2rem auto;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            padding: 4px 0;
+          }
+
+          .ly-text-highlights::-webkit-scrollbar {
+            display: none;
+          }
+
+          .ly-text-highlights {
+            scrollbar-width: none;
+          }
+
+          .ly-text-highlight {
+            flex: 0 0 360px;
+            height: 220px;
+            border-radius: 10px;
+            text-decoration: none !important;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            scroll-snap-align: start;
+            transition: transform 0.3s ease;
+          }
+
+          .ly-text-highlight:hover {
+            transform: translateY(-10px);
+          }
+
+          .ly-text-highlight--red {
+            background-color: var(--no-semantic-error-400) !important;
+          }
+
+          .ly-text-highlight--yellow {
+            background-color: var(--no-semantic-warning-400) !important;
+          }
+
+          .ly-text-highlight--primary-200 {
+            background-color: var(--no-primary-200) !important;
+          }
+
+          .ly-text-highlight__title {
+            margin: 0;
+            padding: 3rem;
+            font-size: 2.5rem;
+            line-height: 3.3rem;
+            font-weight: 400;
+            color: var(--no-badges-promotions);
+          }
+
+          .ly-text-highlight__title strong {
+            font-weight: 800;
+          }
+
+          @media (max-width: 768px) {
+            .ly-text-highlight {
+              flex-basis: 300px;
+            }
+
+            .ly-text-highlight__title {
+              padding: 2rem;
+              font-size: 2rem;
+              line-height: 2.6rem;
+            }
+          }
+        </style>
+
+        <!--
+    HIGHLIGHT
+    Endre kun:
+      - href (lenke)
+      - teksten i <h2>
+      - fargeklasse: --red / --yellow / --primary-200
+      - data-banner-id (hvis dere bruker tracking)
+  -->
+        <a
+          data-banner-id="highlight_kalender_planlegger"
+          href="/web/ePortal/ctrl?action=showgroup&nodeRI=345287018&utm_source=netshop"
+          class="ly-text-highlight ly-text-highlight--red"
+        >
+          <h2 class="ly-text-highlight__title">
+            Påskens <br />
+            søte <br /><strong>fristelser</strong>
+          </h2>
+        </a>
+
+        <a
+          data-banner-id="highlight_pappesker"
+          href="/web/ePortal/ctrl?action=showgroup&nodeRI=345287019"
+          class="ly-text-highlight ly-text-highlight--yellow"
+        >
+          <h2 class="ly-text-highlight__title">
+            <strong>Lys,</strong> <br />
+            <strong>servietter</strong> <br />og servietter
+          </h2>
+        </a>
+
+        <a
+          data-banner-id="highlight_torkepapir"
+          href="/c/hobbyprodukter-345287020"
+          class="ly-text-highlight ly-text-highlight--primary-200"
+        >
+          <h2 class="ly-text-highlight__title">
+            Påskengøy <br />
+            med <br /><strong>hobby</strong>
+          </h2>
+        </a>
+      </section>
+      <!-- endregion -->
+    </section>
+  </body>
+</html>

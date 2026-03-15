@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LY-cards-4-grid</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+
+      <!-- LY-cards-4-grid -->
+      <section class="ly-cards-4-grid">
+        <style>
+          .ly-cards-4-grid {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+          }
+
+          .ly-cards-4-grid__list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 20px;
+          }
+
+          .ly-cards-4-grid__card {
+            position: relative;
+            width: calc(25% - 15px);
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none !important;
+            color: inherit;
+          }
+
+          .ly-cards-4-grid__image {
+            width: 100%;
+            height: 400px;
+            display: block;
+            object-fit: cover;
+            transform: translateY(-20px);
+          }
+
+          .ly-cards-4-grid__label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--no-supporting-cerulean-300, #bfe8ff);
+            color: var(--no-primary-500, #2d2e87);
+            font-size: 24px;
+            font-weight: 600;
+            transition:
+              background-color 0.3s ease,
+              color 0.3s ease;
+          }
+
+          .ly-cards-4-grid__card:hover .ly-cards-4-grid__label {
+            background-color: var(--no-primary-500, #2d2e87);
+            color: var(--no-neutral-0, #ffffff);
+          }
+
+          @media (max-width: 768px) {
+            .ly-cards-4-grid__card {
+              width: 100%;
+            }
+          }
+        </style>
+
+        <div class="ly-cards-4-grid__list">
+          <!-- CARD 1 -->
+          <a
+            class="ly-cards-4-grid__card"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <img
+              class="ly-cards-4-grid__image"
+              src="https://placehold.co/300x400"
+              alt="Beskrivende bildetekst"
+            />
+            <div class="ly-cards-4-grid__label">
+              <span>Kategori</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <a
+            class="ly-cards-4-grid__card"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <img
+              class="ly-cards-4-grid__image"
+              src="https://placehold.co/300x400"
+              alt="Beskrivende bildetekst"
+            />
+            <div class="ly-cards-4-grid__label">
+              <span>Kategori</span>
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a
+            class="ly-cards-4-grid__card"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <img
+              class="ly-cards-4-grid__image"
+              src="https://placehold.co/300x400"
+              alt="Beskrivende bildetekst"
+            />
+            <div class="ly-cards-4-grid__label">
+              <span>Kategori</span>
+            </div>
+          </a>
+
+          <!-- CARD 4 -->
+          <a
+            class="ly-cards-4-grid__card"
+            href="#"
+            style="text-decoration: none !important"
+          >
+            <img
+              class="ly-cards-4-grid__image"
+              src="https://placehold.co/300x400"
+              alt="Beskrivende bildetekst"
+            />
+            <div class="ly-cards-4-grid__label">
+              <span>Kategori</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

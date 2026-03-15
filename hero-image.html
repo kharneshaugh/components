@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HLY-header-text</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- LY-hero-image -->
+      <section class="ly-hero-image">
+        <style>
+          .ly-hero-image {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+          }
+
+          .ly-hero-image__link {
+            display: block;
+            text-decoration: none !important;
+            color: inherit;
+          }
+
+          .ly-hero-image__img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+          }
+        </style>
+
+        <a class="ly-hero-image__link" href="#">
+          <img
+            class="ly-hero-image__img"
+            src="https://placehold.co/1440x500"
+            alt="Beskrivende bildetekst"
+          />
+        </a>
+      </section>
+    </section>
+  </body>
+</html>

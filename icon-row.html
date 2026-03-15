@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Icon Row</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- #region ICON ROW  -->
+      <section class="ly-icon-row" aria-label="Quick category icons">
+        <style>
+          .ly-icon-row {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+          }
+
+          .ly-icon-row__list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 20px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+          }
+
+          .ly-icon-row__list::-webkit-scrollbar {
+            height: 6px;
+          }
+
+          .ly-icon-row__item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 210px;
+            text-decoration: none !important;
+            color: inherit;
+            flex: 0 0 auto;
+          }
+
+          .ly-icon-row__icon {
+            width: 54px;
+            height: 55px;
+            flex: 0 0 auto;
+          }
+
+          .ly-icon-row__text {
+            margin: 0;
+            font-size: var(--fo-24);
+            color: var(--no-primary-500);
+            line-height: 1.1;
+          }
+
+          @media (max-width: 768px) {
+            .ly-icon-row__list {
+              justify-content: flex-start;
+            }
+          }
+        </style>
+
+        <!--
+    IKON-LENKE
+     Endre kun:
+      - href
+      - img src + alt
+      - teksten
+  -->
+        <div class="ly-icon-row__list">
+          <a href="#" class="ly-icon-row__item">
+            <img
+              src="/static/objectstore/LYRECO_front_icon_row_kopipapir.svg"
+              alt="Kopipapir"
+              class="ly-icon-row__icon"
+            />
+            <p class="ly-icon-row__text">Kopipapir</p>
+          </a>
+
+          <a href="#" class="ly-icon-row__item">
+            <img
+              src="/static/objectstore/LYRECO_front_icon_row_kaffe.svg"
+              alt="Kaffe"
+              class="ly-icon-row__icon"
+            />
+            <p class="ly-icon-row__text">Kaffe</p>
+          </a>
+
+          <a href="#" class="ly-icon-row__item">
+            <img
+              src="/static/objectstore/LYRECO_front_icon_row_kontorrekvisita.svg"
+              alt="Kontorrekvisita"
+              class="ly-icon-row__icon"
+            />
+            <p class="ly-icon-row__text">Kontorrekvisita</p>
+          </a>
+
+          <a href="#" class="ly-icon-row__item">
+            <img
+              src="/static/objectstore/LYRECO_front_icon_row_kontorstol.svg"
+              alt="Kontorstol"
+              class="ly-icon-row__icon"
+            />
+            <p class="ly-icon-row__text">Kontorstol</p>
+          </a>
+
+          <a href="#" class="ly-icon-row__item">
+            <img
+              src="/static/objectstore/LYRECO_front_icon_row_blekk_og_toner.svg"
+              alt="Blekk og toner"
+              class="ly-icon-row__icon"
+            />
+            <p class="ly-icon-row__text">Blekk og toner</p>
+          </a>
+        </div>
+      </section>
+      <!-- endregion -->
+    </section>
+  </body>
+</html>

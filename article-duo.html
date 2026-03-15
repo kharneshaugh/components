@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article duo</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+
+      <!-- #region ARTICLE DOUBLE (adjustable + reversible) -->
+      <section class="ly-article-duo" aria-labelledby="insp-tittel">
+        <style>
+          .ly-article-duo {
+            --large: 3fr;
+            --small: 2fr;
+
+            display: grid !important;
+            grid-template-columns: var(--large) var(--small);
+            gap: 24px;
+            max-width: 1440px;
+            width: 100%;
+            height: 500px;
+          }
+
+          .ly-article-duo.is-reversed {
+            grid-template-columns: var(--small) var(--large);
+          }
+
+          .ly-article-duo > a {
+            display: block !important;
+            min-width: 0;
+            text-decoration: none !important;
+            color: inherit;
+            border-radius: 10px;
+            overflow: hidden;
+            outline: none;
+          }
+
+          .ly-article-duo > a:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 4px;
+            border-radius: 12px;
+          }
+
+          .ly-article-duo__card {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            display: grid !important;
+            align-items: stretch;
+            overflow: hidden;
+          }
+
+          .ly-article-duo__card--large {
+            grid-template-columns: 4fr 6fr;
+            grid-template-areas: "text media";
+          }
+
+          .ly-article-duo__card--small {
+            grid-template-rows: auto 1fr;
+            grid-template-areas: "media" "text";
+          }
+
+          .ly-article-duo__text {
+            grid-area: text;
+            min-width: 0;
+            display: flex !important;
+            flex-direction: column;
+            gap: 16px;
+          }
+
+          .ly-article-duo__media {
+            grid-area: media;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .ly-article-duo__media img {
+            display: block !important;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .ly-article-duo__card--large .ly-article-duo__media img {
+            border-radius: 0 10px 10px 0;
+          }
+
+          .ly-article-duo__card--small .ly-article-duo__media img {
+            border-radius: 10px 10px 0 0;
+            height: auto;
+          }
+
+          .ly-article-duo h3 {
+            font-size: var(--fo-24);
+            font-weight: 600;
+            margin: 0 0 8px 0;
+          }
+
+          .ly-article-duo p {
+            margin: 8px 0;
+            font-size: var(--fo-16);
+          }
+
+          .ly-article-duo__text--large {
+            justify-content: center;
+            padding: 56px 32px 46px 32px;
+          }
+
+          .ly-article-duo__text--small {
+            padding: 24px 32px 70px 32px;
+          }
+
+          .ly-article-duo__btn {
+            position: absolute;
+            bottom: 1rem;
+            left: 2rem;
+          }
+
+          .ly-article-duo__hover:hover .ly-article-duo__btn {
+            gap: 12px;
+            transition: ease-in 0.3s;
+          }
+
+          .no-pill-btn-supporting-mint {
+            border: 1px solid var(--no-supporting-mint-700);
+            background: var(--no-supporting-mint-700);
+            color: var(--no-neutral-0);
+            transition: 0.5s;
+          }
+
+          .no-pill-btn-supporting-mint:hover {
+            border: 1px solid var(--no-supporting-mint-700);
+            background: none;
+            color: var(--no-supporting-mint-700);
+            transition: 0.5s;
+          }
+
+          .ly-article-duo__theme-mint {
+            background-color: var(--no-supporting-mint-300);
+            color: var(--no-supporting-mint-700);
+          }
+
+          .ly-article-duo__theme-neutral {
+            background-color: var(--no-neutral-100);
+            color: var(--no-neutral-700);
+          }
+
+          @media (max-width: 1183px) {
+            .ly-article-duo__text--large {
+              padding: 32px;
+            }
+          }
+
+          @media (max-width: 1065px) {
+            .ly-article-duo__text--large {
+              padding: 24px;
+            }
+          }
+
+          @media (max-width: 950px) {
+            .ly-article-duo {
+              grid-template-columns: 1fr !important;
+              height: auto;
+            }
+
+            .ly-article-duo__card--large {
+              grid-template-columns: 1fr;
+              grid-template-areas: "media" "text";
+            }
+
+            .ly-article-duo__text--large,
+            .ly-article-duo__text--small {
+              padding: 24px 24px 64px 24px;
+              margin: 12px 0;
+            }
+
+            .ly-article-duo__media img {
+              height: 300px;
+              border-radius: 10px 10px 0 0 !important;
+            }
+          }
+        </style>
+
+        <!--
+    JUSTER BREDDE FOR STOR/LITEN
+     Endre på <section class="ly-article-duo" ...> med inline style:
+       style="--large: 4fr; --small: 2fr;"
+    REVERSE
+     Legg til class: is-reversed
+  -->
+
+        <!-- LARGE (left by default) -->
+        <a
+          style="text-decoration: none !important"
+          class="radius-medium ly-article-duo__hover"
+          href="/sok?suggestion=false&searchText=kaffe"
+          aria-label="Kaffe - For enhver smak"
+        >
+          <article
+            class="ly-article-duo__card ly-article-duo__card--large ly-article-duo__theme-mint"
+          >
+            <div class="ly-article-duo__text ly-article-duo__text--large">
+              <div>
+                <h3>Kaffe - For enhver smak</h3>
+                <p>
+                  Start dagen riktig med en kopp kvalitetskaffe! Velg blant vårt
+                  store utvalg av Arabica, Robusta, Single Origin og smakfulle
+                  blends.
+                </p>
+              </div>
+
+              <span
+                class="no-pill-btn no-pill-btn-supporting-mint ly-article-duo__btn"
+                style="max-width: fit-content"
+              >
+                Finn din favoritt
+              </span>
+            </div>
+
+            <div class="ly-article-duo__media" aria-hidden="true">
+              <img
+                src="/static/objectstore/NO_landing_paske__kaffe-for-enhver-smak.webp"
+                style="object-position: 10% 50%"
+                alt="En gul kaffekopp med tulipaner"
+              />
+            </div>
+          </article>
+        </a>
+
+        <!-- SMALL (right by default) -->
+        <a
+          style="text-decoration: none !important"
+          data-banner-id="double_wrapmaster"
+          class="radius-medium ly-article-duo__hover"
+          href="/c/spise-og-drikke/drikkevarer/te-244107411"
+          aria-label="Te, for enhversmak og anledning"
+        >
+          <article
+            class="ly-article-duo__card ly-article-duo__card--small ly-article-duo__theme-mint"
+          >
+            <div class="ly-article-duo__media" aria-hidden="true">
+              <img
+                src="/static/objectstore/NO_landing_paske__te-for-enhversmak-og-anledning.webp"
+                alt="En kopp te på bord"
+              />
+            </div>
+
+            <div class="ly-article-duo__text ly-article-duo__text--small">
+              <div>
+                <h3>Te, for enhversmak og anledning</h3>
+                <p>
+                  Enten du ønsker en oppkvikkende start på dagen eller en
+                  avslappende kveldskopp, har vi stort utvalg av te i alle
+                  smaker.
+                </p>
+              </div>
+
+              <span
+                class="no-pill-btn no-pill-btn-supporting-mint ly-article-duo__btn"
+                style="
+                  max-width: fit-content;
+                  left: 50%;
+                  transform: translate(-50%, 0%);
+                "
+              >
+                Se utvalget
+              </span>
+            </div>
+          </article>
+        </a>
+      </section>
+      <!-- endregion -->
+    </section>
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation</title>
+    <link rel="stylesheet" href="/Components/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+
+      <!-- #region TOP PAGE NAV  -->
+      <nav class="ly-top-page-nav-wrap ly-top-page-nav-wrap--fade">
+        <style>
+          .ly-top-page-nav-wrap {
+            width: 100%;
+            background-color: var(--no-neutral-0, #fff);
+            border-bottom: 1px solid var(--no-primary-300, #c7d6ff);
+            margin-bottom: 24px;
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            font-size: 1.2rem;
+          }
+
+          .ly-top-page-nav-wrap::-webkit-scrollbar {
+            display: none;
+          }
+
+          .ly-top-page-nav {
+            display: inline-flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 0;
+            white-space: nowrap;
+          }
+
+          .ly-top-page-nav > li {
+            flex: 0 0 auto;
+            font-size: 1.2rem;
+          }
+
+          .ly-top-page-nav a {
+            display: block;
+            padding: 0.5rem 1rem;
+            position: relative;
+            text-decoration: none;
+            color: var(--no-primary-500, #2b5cff);
+            cursor: pointer;
+            white-space: nowrap;
+          }
+
+          .ly-top-page-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--no-primary-500, #2b5cff);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+          }
+
+          .ly-top-page-nav a:hover::after,
+          .ly-top-page-nav-active a::after {
+            transform: scaleX(1);
+          }
+
+          @media (min-width: 769px) {
+            .ly-top-page-nav-wrap.is-centered {
+              text-align: center;
+            }
+
+            .ly-top-page-nav-wrap.is-centered .ly-top-page-nav {
+              margin-left: auto;
+              margin-right: auto;
+              display: inline-flex;
+            }
+          }
+
+          .ly-top-page-nav-wrap--fade::before,
+          .ly-top-page-nav-wrap--fade::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 56px;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+          }
+
+          .ly-top-page-nav-wrap--fade::before {
+            left: 0;
+            background: linear-gradient(
+              to right,
+              var(--no-neutral-0, #fff),
+              rgba(255, 255, 255, 0)
+            );
+          }
+
+          .ly-top-page-nav-wrap--fade::after {
+            right: 0;
+            background: linear-gradient(
+              to left,
+              var(--no-neutral-0, #fff),
+              rgba(255, 255, 255, 0)
+            );
+          }
+
+          .ly-top-page-nav-wrap--fade.is-left-fade::before {
+            opacity: 1;
+          }
+          .ly-top-page-nav-wrap--fade.is-right-fade::after {
+            opacity: 1;
+          }
+        </style>
+
+        <ul class="ly-top-page-nav">
+          <li>
+            <a href="/a/inspirasjon" style="text-decoration: none !important"
+              >Inspirasjon</a
+            >
+          </li>
+          <li>
+            <a href="/a/tjenester" style="text-decoration: none !important"
+              >Tjenester</a
+            >
+          </li>
+          <li>
+            <a
+              href="/a/leverandornyheter"
+              style="text-decoration: none !important"
+              >Leverandørnyheter</a
+            >
+          </li>
+          <li class="ly-top-page-nav-active">
+            <a href="/a/til-bedrifter" style="text-decoration: none !important"
+              >Til bedrifter</a
+            >
+          </li>
+          <li>
+            <a href="/a/kampanjer" style="text-decoration: none !important"
+              >Kampanjer</a
+            >
+          </li>
+        </ul>
+
+        <script>
+          (function () {
+            document
+              .querySelectorAll(".ly-top-page-nav-wrap--fade")
+              .forEach(function (wrap) {
+                function update() {
+                  var maxScroll = wrap.scrollWidth - wrap.clientWidth;
+                  var left = wrap.scrollLeft;
+
+                  wrap.classList.toggle("is-centered", maxScroll <= 1);
+
+                  wrap.classList.toggle(
+                    "is-left-fade",
+                    maxScroll > 1 && left > 2,
+                  );
+                  wrap.classList.toggle(
+                    "is-right-fade",
+                    maxScroll > 1 && left < maxScroll - 2,
+                  );
+                }
+
+                wrap.addEventListener("scroll", function () {
+                  window.requestAnimationFrame(update);
+                });
+
+                window.addEventListener("resize", update);
+                update();
+              });
+          })();
+        </script>
+      </nav>
+      <!-- #endregion -->
+    </section>
+  </body>
+</html>

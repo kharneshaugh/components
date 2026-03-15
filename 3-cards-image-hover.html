@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Y-cards-3-image-hover</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- LY-cards-3-image-hover -->
+      <section class="ly-cards-3-hover" aria-label="Brand highlights">
+        <style>
+          .ly-cards-3-hover {
+            max-width: 1440px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: 10px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 4px;
+          }
+
+          .ly-cards-3-hover::-webkit-scrollbar {
+            height: 6px;
+          }
+          .ly-cards-3-hover::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .ly-cards-3-hover::-webkit-scrollbar-thumb {
+            background: var(--no-neutral-400, #c4c9d4);
+            border-radius: 999px;
+          }
+
+          .ly-cards-3-hover__card {
+            position: relative;
+            flex: 0 0 calc(33.333% - 7px);
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            scroll-snap-align: start;
+          }
+
+          .ly-cards-3-hover__link {
+            display: block;
+            height: 100%;
+            width: 100%;
+            text-decoration: none !important;
+            color: inherit;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+          }
+
+          .ly-cards-3-hover__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .ly-cards-3-hover__badge {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            text-align: center;
+            padding: 8px 12px;
+            background-color: var(--no-primary-100, #ececf9);
+            color: var(--no-primary-700, #131439);
+            border-radius: 100px;
+            z-index: 2;
+            font-size: 14px;
+            pointer-events: none;
+          }
+
+          .ly-cards-3-hover__hover-logo {
+            position: absolute;
+            left: 50%;
+            bottom: 20%;
+            transform: translateX(-50%);
+            opacity: 0;
+            z-index: 2;
+            pointer-events: none;
+            width: 300px;
+            text-align: center;
+            transition: opacity 0.8s ease;
+          }
+
+          .ly-cards-3-hover__hover-logo img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+          }
+
+          .ly-cards-3-hover__card:hover .ly-cards-3-hover__hover-logo {
+            opacity: 1;
+          }
+
+          .ly-cards-3-hover__cta {
+            position: absolute;
+            left: 50%;
+            bottom: 5%;
+            transform: translateX(-50%);
+            z-index: 2;
+          }
+
+          @media (max-width: 768px) {
+            .ly-cards-3-hover__card {
+              flex: 0 0 80%;
+              height: 250px;
+            }
+          }
+        </style>
+
+        <!--
+    CARD — copy block for more cards
+    Edit: href, data-banner-id, image src+alt, badge text, hover logo, CTA text
+  -->
+
+        <div class="ly-cards-3-hover__card">
+          <a
+            class="ly-cards-3-hover__link"
+            href="#"
+            target="_blank"
+            data-banner-id="tracking_id_1"
+          >
+            <img
+              class="ly-cards-3-hover__image"
+              src="https://placehold.co/480x300"
+              alt="Beskrivelse av bilde"
+            />
+            <div class="ly-cards-3-hover__badge">Merke</div>
+            <div class="ly-cards-3-hover__hover-logo">
+              <img src="https://placehold.co/200x60" alt="Logo" />
+            </div>
+            <span
+              class="no-pill-btn no-pill-btn-neutral-white ly-cards-3-hover__cta"
+            >
+              Les mer
+            </span>
+          </a>
+        </div>
+
+        <div class="ly-cards-3-hover__card">
+          <a
+            class="ly-cards-3-hover__link"
+            href="#"
+            target="_blank"
+            data-banner-id="tracking_id_2"
+          >
+            <img
+              class="ly-cards-3-hover__image"
+              src="https://placehold.co/480x300"
+              alt="Beskrivelse av bilde"
+            />
+            <div class="ly-cards-3-hover__badge">Merke</div>
+            <div class="ly-cards-3-hover__hover-logo">
+              <img src="https://placehold.co/200x60" alt="Logo" />
+            </div>
+            <span
+              class="no-pill-btn no-pill-btn-neutral-white ly-cards-3-hover__cta"
+            >
+              Les mer
+            </span>
+          </a>
+        </div>
+
+        <div class="ly-cards-3-hover__card">
+          <a
+            class="ly-cards-3-hover__link"
+            href="#"
+            target="_blank"
+            data-banner-id="tracking_id_3"
+          >
+            <img
+              class="ly-cards-3-hover__image"
+              src="https://placehold.co/480x300"
+              alt="Beskrivelse av bilde"
+            />
+            <div class="ly-cards-3-hover__badge">Merke</div>
+            <div class="ly-cards-3-hover__hover-logo">
+              <img src="https://placehold.co/200x60" alt="Logo" />
+            </div>
+            <span
+              class="no-pill-btn no-pill-btn-neutral-white ly-cards-3-hover__cta"
+            >
+              Les mer
+            </span>
+          </a>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

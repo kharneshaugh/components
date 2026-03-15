@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HLY-header-text</title>
+    <link rel="stylesheet" href="/style.css" />
+    <base href="http://cdn-netshop.lyrecocontract.no/" />
+  </head>
+  <body>
+    <section class="main_wrapper_body">
+      <style>
+        .main_wrapper_body {
+          max-width: 1440px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 48px;
+          font-family: "Jost", sans-serif;
+          font-size: var(--fo-16);
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+          .main_wrapper_body {
+            padding: 0 10px;
+          }
+        }
+      </style>
+      <!-- LY-header-text -->
+      <section class="ly-header-text">
+        <style>
+          .ly-header-text {
+            max-width: 1440px;
+            width: 100%;
+            color: var(--no-primary-500, #2d2e87);
+            border-radius: 10px;
+            padding: 40px;
+            box-sizing: border-box;
+          }
+
+          .ly-header-text__title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+          }
+
+          .ly-header-text__text {
+            font-size: 16px;
+            margin: 12px 0 0;
+            line-height: 1.55;
+          }
+        </style>
+
+        <h1 class="ly-header-text__title">Overskrift for seksjonen</h1>
+        <p class="ly-header-text__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+          voluptate porro blanditiis nihil ex, odit iure, nisi vitae nesciunt
+          consequuntur dolorum! Sit laudantium, provident quidem accusamus illo
+          sed repellendus maxime.
+        </p>
+      </section>
+    </section>
+  </body>
+</html>
